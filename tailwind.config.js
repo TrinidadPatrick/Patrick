@@ -8,13 +8,15 @@ export default {
     extend: {
       colors : {
         themeBlue : '#0B1324',
+        themeBlueLight : '#182748',
         themeGreen : '#2FD1A9',
         themeGreenLight : '#45d6b2',
         themeWhite : '#FFFFFF'
       }
       ,
       screens : {
-        extraSm : '400px'
+        extraSm : '400px',
+        semiMd : '950px'
       }
     },
   },

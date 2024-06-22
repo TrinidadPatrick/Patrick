@@ -52,11 +52,11 @@ const Header = () => {
           <Link to="about" smooth={true} duration={500}>
           <button onClick={()=>handleSetActive('about')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'about' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>About me</button>
           </Link>
-          <Link to="skills"  smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('skills')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'skills' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Skills</button>
-          </Link>
           <Link to="services" smooth={true} duration={500}>
           <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>
+          </Link>
+          <Link to="skills"  smooth={true} duration={500}>
+          <button onClick={()=>handleSetActive('skills')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'skills' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Skills</button>
           </Link>
           <Link to="projects" smooth={true} duration={500}>
           <button onClick={()=>handleSetActive('projects')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'projects' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Projects</button>

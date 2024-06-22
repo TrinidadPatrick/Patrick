@@ -11,21 +11,21 @@ import Projects from './Components/Projects'
 function App() {
 
   return (
-    <div className='App relative'>
+    <div className='App relative '>
       <Header />
 
-      <main>
+      <main className='flex flex-col'>
         <Element name='home'>
           <Introduction />
         </Element>
         <Element name='about'>
           <AboutMe />
         </Element>
-        <Element name='skills'>
-          <Skills />
-        </Element>
         <Element name='services'>
           <Services />
+        </Element>
+        <Element name='skills'>
+          <Skills />
         </Element>
         <Element name='projects'>
           <Projects />
