@@ -11,7 +11,7 @@ import Projects from './Components/Projects'
 function App() {
 
   return (
-    <div className='App relative '>
+    <div className='App relative overflow-x-hidden flex flex-col items-center w-full max-w-[1920px] mx-auto bg-themeBlue '>
       <Header />
 
       <main className='flex flex-col'>

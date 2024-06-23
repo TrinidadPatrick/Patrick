@@ -11,7 +11,8 @@ const Introduction = () => {
 
 
   return (
-    <div style={{ backgroundImage: `url(${HomeBG})`}} className='w-full h-screen   flex gap-10 items-center px-10 py-20'>
+    <main className=''>
+    <div style={{ backgroundImage: `url(${HomeBG})`, backgroundRepeat : 'no-repeat', backgroundPosition : 'top', backgroundSize : 'cover'}} className='max-w-[1920px] mx-auto bg-black origin-top bg-center h-screen max-h-[1080px] flex gap-10 items-center px-10 py-20'>
         {/* Links sections Facebook, Github, and LinkedIn */}
         <div className='hidden sm:flex w-7 gap-6 items-center flex-col py-10'>
             {/* Line 1 */}
@@ -46,17 +47,18 @@ const Introduction = () => {
 
         {/* My Image */}
         <div className='hidden lg:flex flex-1 h-full justify-center items-center relative'>
-            <div className='flex-1 h-full flex absolute justify-center'>
+            <div className='flex-1 h-full max-h-[700px] flex absolute justify-center'>
                 <img src={Blob1} />
             </div>
-            <div className='flex-1 h-full flex justify-center absolute '>
+            <div className='flex-1 h-full flex max-h-[700px] justify-center absolute '>
                 <img src={Blob2}  />
             </div>
-            <div className=' w-[300px] xl:w-[350px] rounded-full aspect-square bg-white overflow-hidden shadow z-20'>
+            <div className=' w-[300px] xl:w-[370px] max-h-[700px] rounded-full aspect-square bg-white overflow-hidden shadow z-20'>
                 <img src={Profile} alt='profile' />
             </div>
         </div>
     </div>
+    </main>
   )
 }
 

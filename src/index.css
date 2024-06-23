@@ -35,3 +35,18 @@
   visibility: visible;
   transform: scaleX(1);
 }
+
+
+/* Services box shadow */
+.serviceBoxShadow {
+  transition: all 0.1s ease-in-out; /* Add this line */
+  -webkit-transition: all 0.1s ease-in-out; /* For older versions of Webkit */
+  -moz-transition: all 0.1s ease-in-out; /* For older versions of Firefox */
+}
+
+.serviceBoxShadow:hover {
+  box-shadow: -1px 1px 13px 6px rgba(47,209,169,0.82);
+  -webkit-box-shadow: -1px 1px 13px 6px rgba(47,209,169,0.82);
+  -moz-box-shadow: -1px 1px 13px 6px rgba(47,209,169,0.82);
+  scale: 1.02;
+}

@@ -33,11 +33,14 @@ const Header = () => {
 
 
   return (
-    <header className={`fixed z-50 flex items-center w-full ${navbarBg ? 'bg-transparent bg-opacity-80 backdrop-blur-lg' : ''} p-0`}>
+    <header className={`fixed max-w-[1920px] z-50 flex items-center w-full ${navbarBg ? 'bg-transparent bg-opacity-80 backdrop-blur-lg' : ''} p-0`}>
       {/* Backdrop */}
-      {/* <div style={{backgroundColor : 'rgba(0,0,0,0.6)'}} className='w-full h-screen backdrop-blur-sm top-0 absolute bg-white z-20'>
+      {
+        showSideBar &&
+        <div onClick={()=>setShowSideBar(false)} style={{backgroundColor : 'rgba(0,0,0,0.6)'}} className='w-full cursor-pointer h-screen backdrop-blur-sm top-0 absolute bg-white z-20'>
 
-      </div> */}
+      </div>
+      }
       
       <div className='flex ps-5 py-5'>
         <h1 className='text-white text-4xl inline-block font-bold'>J</h1>
@@ -52,7 +55,7 @@ const Header = () => {
           <Link to="about" smooth={true} duration={500}>
           <button onClick={()=>handleSetActive('about')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'about' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>About me</button>
           </Link>
-          <Link to="services" smooth={true} duration={500}>
+          <Link to="services" smooth={true} duration={500} offset={-100}>
           <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>
           </Link>
           <Link to="skills"  smooth={true} duration={500}>
@@ -71,7 +74,7 @@ const Header = () => {
         </nav>
         
         {/* Mobile sidebar */}
-        <aside className={`${showSideBar ? 'translate-x-[0%]' : 'translate-x-[100%]'} transition-all ease-in w-screen extraSm:w-[300px] z-30 bg-themeBlue flex flex-col gap-20 justify-center items-center h-screen top-0 right-0 absolute`}>
+        <aside className={`${showSideBar ? 'translate-x-[0%]' : 'translate-x-[100%]'} md:hidden transition-all ease-in w-screen extraSm:w-[300px] z-30 bg-themeBlue flex flex-col gap-20 justify-center items-center h-screen top-0 right-0 absolute`}>
           <div className='w-full absolute top-0 flex justify-end'>
             <button onClick={()=>setShowSideBar(false)} className='p-2 '><IoCloseOutline color='white' size={30} /></button>
           </div>
