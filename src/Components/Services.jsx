@@ -15,11 +15,11 @@ const Services = () => {
   },[])
 
   return (
-    <div className='w-full h-full flex flex-col items-center gap-20 bg-themeBlue text-white py-10 '>
+    <div className='w-full h-full flex flex-col items-center gap-20 bg-themeBlue text-white pt-10 pb-24 '>
       <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl font-bold underline underline-offset-[9px]'>My Services</h1>
 
       {/* Service List */}
-      <div data-aos="zoom-out"  className='flex flex-wrap mt-10 gap-16 justify-center semiMd:grid semiSm:grid-cols-2 semiMd:grid-cols-4 semiMd:gap-5 xl:gap-10 w-full px-10 xl:px-20'>
+      <div data-aos={size.width <= 768 ? '' : 'zoom-out'}  className='flex flex-wrap mt-10 gap-16 justify-center semiMd:grid semiSm:grid-cols-2 semiMd:grid-cols-4 semiMd:gap-5 xl:gap-10 w-full px-10 xl:px-20'>
 
         <div className='bg-themeBlueLight w-[300px] h-[250px] xl:h-[300px] semiMd:w-full serviceBoxShadow py-3 px-3 lg:px-4 flex flex-col rounded semiMd:aspect-square relative'>
           <div className=' w-[4.5rem] lg:w-20 xl:w-24  aspect-square bg-themeGreen rounded absolute mx-auto -top-10 lg:-top-12 left-[50%] -translate-x-[50%] flex items-center justify-center'>

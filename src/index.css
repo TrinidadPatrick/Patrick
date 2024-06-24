@@ -50,3 +50,50 @@
   -moz-box-shadow: -1px 1px 13px 6px rgba(47,209,169,0.82);
   scale: 1.02;
 }
+
+/* Skill boxes */
+.skillBox {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+
+.skillBox:hover {
+  box-shadow: -1px 1px 10px 3px rgba(47,209,169,0.82);
+  -webkit-box-shadow: -1px 1px 10px 3px rgba(47,209,169,0.82);
+  -moz-box-shadow: -1px 1px 10px 3px rgba(47,209,169,0.82);
+  scale: 1.02;
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms;
+}
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

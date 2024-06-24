@@ -58,7 +58,7 @@ const Header = () => {
           <Link to="services" smooth={true} duration={500} offset={-100}>
           <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>
           </Link>
-          <Link to="skills"  smooth={true} duration={500}>
+          <Link to="skills"  smooth={true} duration={500} offset={-100}>
           <button onClick={()=>handleSetActive('skills')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'skills' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Skills</button>
           </Link>
           <Link to="projects" smooth={true} duration={500}>
