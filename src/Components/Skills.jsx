@@ -133,7 +133,7 @@ const Skills = () => {
             </nav>
 
             {/* Lists */}
-            <div ref={containerRef}  className='mx-auto grid justify-center justify-items-center grid-cols-2 semiSm:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-10 mt-3'>
+            <div ref={containerRef}  className='mx-auto grid justify-center justify-items-center grid-cols-2 semiSm:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-10 mt-3'>
             {skills.map((skill, index) => (
             (selectedOption === "All" || selectedOption === skill.category) && (
               <Zoom key={index} in={visible} timeout={500} style={{ transitionDelay: `${index * 20}ms` }}>
