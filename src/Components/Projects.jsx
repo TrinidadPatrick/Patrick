@@ -32,7 +32,7 @@ const Projects = () => {
     {
         id: 'item-2',
         title: 'Swift POS',
-        description : "A web-based Point of Sale system with user-friendly user interface. It also comes with daily, monthly, and annualy reports and expenses.",
+        description : "A Point of Sale system with user-friendly UI. It also comes with daily, monthly, and annualy reports and expenses.",
         techStack : ['React', 'Tailwind', 'MySQL', 'Laravel'],
         img : [swiftPOSImg, 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180810_uusdv7.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180902_kwlr93.png',
               'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180913_jopmhs.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180927_fvxp8q.png'],
@@ -160,13 +160,13 @@ const Projects = () => {
 
   const MobileCarousel = () => {
     return (
-      <div style={{width : `${size.width - 10}px`}} className='flex md:hidden h-full pb-10 mt-10 '>
+      <div style={{width : `${size.width - 20}px`}} className='flex md:hidden mx-auto h-full pb-10 mt-10 '>
           <Carousel infiniteLoop showArrows={false} swipeable={true}
           showIndicators={true} showStatus={false} showThumbs={false} className=' w-full  h-full pb-10 flex'>
               {
                 mockItems?.map((item, index) => {
                   return (
-                <div key={index} className={`w-full p-2 flex flex-col gap-2 projectBox mb-10  rounded-lg mx-auto bg-themeBlueOpac`}>
+                <div key={index} className={`w-full  p-2 flex flex-col gap-2 projectBox mb-10  rounded-lg mx-auto bg-themeBlueOpac`}>
                   {/* Image */}
                   <div className='w-full flex overflow-hidden aspect-video'>
                     <Carousel showIndicators={false} showArrows={true}  swipeable={false} 

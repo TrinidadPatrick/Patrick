@@ -11,10 +11,10 @@ const ContactMe = () => {
         <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl text-white xl:text-4xl text-center  font-bold underline underline-offset-[9px]'>Contact me</h1>
 
         <div className='w-full h-full flex gap-5 mt-10'>
-            <div className='flex-1  flex justify-center items-center'>
-                <img className='w-[40%] aspect-square' src={contactMeImg} alt="contact me" />
+            <div className='flex-1 hidden sm:flex justify-center items-center'>
+                <img className='w-[60%] xl:w-[40%] aspect-square' src={contactMeImg} alt="contact me" />
             </div>
-            <div className='flex-1 flex flex-col justify-center gap-10 '>
+            <div className='flex-1 flex flex-col px-10 sm:px-0 justify-center gap-10 '>
                 {/* Home */}
                 <div className='flex items-center gap-3'>
                     <FaHome color='white' size={20} />
@@ -39,7 +39,7 @@ const ContactMe = () => {
         </div>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-6">
+        <footer className="bg-gray-900 text-white py-6 mt-10">
       <div className="container mx-auto text-center">
         <p>© All rights reserved. Patrick - {year}</p>
         <div className="flex justify-center space-x-4 mt-4">

@@ -12,7 +12,7 @@ import ContactMe from './Components/ContactMe';
 function App() {
 
   return (
-    <div className='App relative overflow-x-auto flex flex-col items-center w-full max-w-[1920px] mx-auto bg-themeBlue '>
+    <div className='App relative overflow-x-hidden flex flex-col items-center w-full max-w-[1920px] mx-auto bg-themeBlue '>
       <Header />
 
       <main className='flex flex-col'>
