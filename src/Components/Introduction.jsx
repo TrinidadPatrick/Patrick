@@ -6,6 +6,7 @@ import HomeBG from '../Utilities/Images/HomeBG.svg'
 import Blob1 from '../Utilities/Images/Blob1.svg'
 import Blob2 from '../Utilities/Images/Blob2.svg'
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from 'react-scroll';
 
 const Introduction = () => {
 
@@ -19,9 +20,15 @@ const Introduction = () => {
             <div className='w-[2px] bg-white h-[150px]'></div>
             {/* Icons */}
             <div className='flex flex-col gap-5'>
-                <BsFacebook className='text-white' size={25} />
-                <BsGithub className='text-white' size={25} />
-                <BsLinkedin className='text-white' size={23} />
+                <a href="https://www.facebook.com/patrick.trinidad.5872/" target="_blank" rel="noopener noreferrer" className="text-white">
+                    <BsFacebook className='text-white' size={25} />
+                </a>
+                <a href="https://github.com/TrinidadPatrick" target="_blank" rel="noopener noreferrer" className="text-white">
+                    <BsGithub className='text-white' size={25} />
+                </a>
+                <a href="https://www.linkedin.com/in/john-patrick-trinidad-71a4b92ab/" target="_blank" rel="noopener noreferrer" className="text-white">
+                    <BsLinkedin className='text-white' size={23} />
+                </a>
             </div>
             {/* Line 2 */}
             <div className='w-[2px] bg-white h-[150px]'></div>
@@ -33,15 +40,23 @@ const Introduction = () => {
             <span className='text-white text-center  w-full text-[2.5rem] sm:text-5xl  font-bold '>WEB DEVELOPER</span>
             {/* Buttons */}
             <div className='w-full flex flex-wrap justify-center sm:justify-start gap-4'>
-                <button className='text-white hover:bg-themeGreenLight bg-themeGreen px-4 py-2 rounded'>Contact me</button>
+                <Link to="contactme" smooth={true} duration={500}>
+                    <button className='text-white hover:bg-themeGreenLight bg-themeGreen px-4 py-2 rounded'>Contact me</button>
+                </Link>
                 <button className='text-white hover:border-themeGreenLight border border-white px-4 py-2 rounded'>Resume</button>
             </div>
 
             {/* Links */}
             <div className='sm:hidden justify-center mt-5 w-full flex items-center gap-5'>
-                <button><BsFacebook className='text-white' size={25} /></button>
-                <button><BsGithub className='text-white' size={25} /></button>
-                <button><BsLinkedin className='text-white' size={25} /></button>
+            <a href="https://www.facebook.com/patrick.trinidad.5872/" target="_blank" rel="noopener noreferrer" className="text-white">
+                    <BsFacebook className='text-white' size={25} />
+                </a>
+                <a href="https://github.com/TrinidadPatrick" target="_blank" rel="noopener noreferrer" className="text-white">
+                    <BsGithub className='text-white' size={25} />
+                </a>
+                <a href="https://www.linkedin.com/in/john-patrick-trinidad-71a4b92ab/" target="_blank" rel="noopener noreferrer" className="text-white">
+                    <BsLinkedin className='text-white' size={23} />
+                </a>
             </div>
         </div>
 

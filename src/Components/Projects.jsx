@@ -17,7 +17,7 @@ const Projects = () => {
     {
         id: 'item-1',
         title: 'Kanoah: Web-Based Service Finder',
-        description : "A web and mobile-based application for searching and booking services based on the user's location, with chat integration.",
+        description : "A web-based application for searching and booking services based on the user's location, with chat integration.",
         techStack : ['React', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB'],
         img : [
           kanoahImg,
@@ -40,10 +40,45 @@ const Projects = () => {
     },
     {
         id: 'item-3',
-        title: 'slide 3',
-        techStack : ['React', 'React native', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB'],
-        img : [`${baseLoc}/Kanoah/SS1.png`]
-    }
+        title: 'Kanoah Mobile',
+        description : "A mobile-based application for searching and booking services based on the user's location, with chat integration.",
+        techStack : ['React native', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB'],
+        img : [`${baseLoc}/KanoahMobile/KanoahMobileMockup.png`, 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719469730/Soft_Minimalist_Download_Phone_Mockup_zrcskk.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719469729/Soft_Minimalist_Download_Phone_Mockup_1_e7gg7f.png'],
+        projectLink : 'https://drive.google.com/file/d/15DMU35mSjC7nmW6iJwFebrdgyO_zHbwe/view?usp=drive_link'
+    },
+    {
+        id: 'item-4',
+        title: 'Advance Calculator',
+        description : "A semi-advanced calculator that supports continuous equations.",
+        techStack : ['HTML', 'Tailwind', 'Javascript'],
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719471940/Screenshot_2024-06-27_150511_gjoggk.png'],
+        projectLink : 'https://advance-calculator-rose.vercel.app/'
+    },
+    {
+        id: 'item-5',
+        title: 'Crown Funding Page',
+        description : "A crown funding page challenge from Frontend-Mentor",
+        techStack : ['HTML', 'Tailwind', 'Javascript'],
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719472924/Screenshot_2024-06-27_152134_r93oei.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473351/Screenshot_2024-06-27_152821_rmjwkw.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473352/Screenshot_2024-06-27_152845_t5qs6h.png'],
+        projectLink : 'https://crowd-funding-page-opal.vercel.app/'
+    },
+    {
+        id: 'item-6',
+        title: 'Multi Step Form',
+        description : "A Multi Step Form challenge from Frontend-Mentor where use can select plans and addons",
+        techStack : ['React', 'Tailwind', 'Redux'],
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473610/Screenshot_2024-06-27_153147_qiq63c.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473610/Screenshot_2024-06-27_153223_ccawl9.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473613/Screenshot_2024-06-27_153233_ifvjsm.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473614/Screenshot_2024-06-27_153245_pck4tn.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473615/Screenshot_2024-06-27_153301_do9c1c.png'],
+        projectLink : 'https://multi-step-form-sooty-seven.vercel.app/'
+    },
+    {
+        id: 'item-7',
+        title: 'Password Generator',
+        description : "A password generator system with various options, based on a Frontend Mentor challenge.",
+        techStack : ['React', 'Bootstrap'],
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473980/Screenshot_2024-06-27_153923_sjxgit.png'],
+        projectLink : 'https://password-generator-plum-three.vercel.app/'
+    },
   
   ]
   const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
@@ -125,16 +160,16 @@ const Projects = () => {
 
   const MobileCarousel = () => {
     return (
-      <div className='flex md:hidden w-full h-full pb-10 '>
-          <Carousel infiniteLoop
-          showIndicators={false} showStatus={false} showThumbs={false} className=' w-full  h-full pb-10 flex'>
+      <div style={{width : `${size.width - 10}px`}} className='flex md:hidden h-full pb-10 mt-10 '>
+          <Carousel infiniteLoop showArrows={false} swipeable={true}
+          showIndicators={true} showStatus={false} showThumbs={false} className=' w-full  h-full pb-10 flex'>
               {
                 mockItems?.map((item, index) => {
                   return (
-                <div className={`w-[85%] p-2 flex flex-col gap-2 projectBox mb-10  rounded-lg mx-auto bg-themeBlueOpac`}>
+                <div key={index} className={`w-full p-2 flex flex-col gap-2 projectBox mb-10  rounded-lg mx-auto bg-themeBlueOpac`}>
                   {/* Image */}
                   <div className='w-full flex overflow-hidden aspect-video'>
-                    <Carousel showIndicators={true} showArrows={false} 
+                    <Carousel showIndicators={false} showArrows={true}  swipeable={false} 
                     showThumbs={false} stopOnHover showStatus={false} autoPlay={currentSlide === item.id ? true : false}  infiniteLoop interval={5000} >
                       {
                         item.img.map((imgsrc, index)=>(
