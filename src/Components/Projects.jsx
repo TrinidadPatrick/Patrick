@@ -43,7 +43,7 @@ const Projects = () => {
         title: 'Kanoah Mobile',
         description : "A mobile-based application for searching and booking services based on the user's location, with chat integration.",
         techStack : ['React native', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB'],
-        img : [`${baseLoc}/KanoahMobile/KanoahMobileMockup.png`, 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719469730/Soft_Minimalist_Download_Phone_Mockup_zrcskk.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719469729/Soft_Minimalist_Download_Phone_Mockup_1_e7gg7f.png'],
+        img : [`https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719495802/KanoahMobileMockup_hy5r1k.png`, 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719469730/Soft_Minimalist_Download_Phone_Mockup_zrcskk.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719469729/Soft_Minimalist_Download_Phone_Mockup_1_e7gg7f.png'],
         projectLink : 'https://drive.google.com/file/d/15DMU35mSjC7nmW6iJwFebrdgyO_zHbwe/view?usp=drive_link'
     },
     {
