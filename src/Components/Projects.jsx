@@ -26,7 +26,7 @@ const Projects = () => {
           'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS5_ww7jb8.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328954/SS9_mm9bmr.png', 
           'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS8_t484fy.png'
         ],
-        video : `${baseLoc}/Kanoah/KanoahVideoDemo.mp4`,
+        video : `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447721/KanoahVideoDemo_fibs2p.mp4`,
         projectLink : 'https://kanoah-web.vercel.app/'
     },
     {
