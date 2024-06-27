@@ -36,7 +36,7 @@ const Projects = () => {
         techStack : ['React', 'Tailwind', 'MySQL', 'Laravel'],
         img : [swiftPOSImg, 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180810_uusdv7.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180902_kwlr93.png',
               'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180913_jopmhs.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180927_fvxp8q.png'],
-        video : `${baseLoc}/SwiftPOS/SwiftPOSVideoDemo.mp4`,
+        video : `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447816/SwiftPOSVideoDemo_xukej0.mp4`,
     },
     {
         id: 'item-3',
