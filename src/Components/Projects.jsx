@@ -67,7 +67,7 @@ const Projects = () => {
         return {
             ...item,
             renderItem: (
-                <div className={`mx-auto p-2 bg-themeBlueOpac projectBox rounded-md flex flex-col gap-2 aspect-[2] lg:mx-5 w-full lg:w-full   text-2xl text-white transition-all duration-700 ${currentSlide === item.id ? 'z-10 lg:scale-[1.3] ': ' scale-[0.9] backdrop-blur-sm opacity-25 '}`}>
+                <div className={`mx-auto p-2 bg-themeBlueOpac projectBox rounded-md flex flex-col gap-2 aspect-[2] lg:mx-5 w-full  text-2xl text-white transition-all duration-700 ${currentSlide === item.id ? 'z-10 lg:scale-[1.6] xl:scale-[1.2] ': ' scale-[0.9] backdrop-blur-sm opacity-25 '}`}>
                   {/* Image */}
                   <div className='w-full flex overflow-hidden aspect-video'>
                     <Carousel showIndicators={false} 
@@ -187,7 +187,7 @@ const Projects = () => {
       <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl text-center  font-bold underline underline-offset-[9px]'>My Projects</h1>
 
       {/* Carousel */}
-      <div className='w-full overflow-hidden relative h-full justify-center flex flex-col items-center gap-10 mt-16'>
+      <div className='w-full overflow-hidden relative h-full justify-center flex flex-col items-center gap-10'>
         <div className="py-20 hidden relative md:flex gap-5">
               <button onClick={slideToPrevItem} className=" z-30 top-1/2 flex-none ">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
