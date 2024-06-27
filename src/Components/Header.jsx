@@ -7,18 +7,36 @@ const Header = () => {
   const [navbarBg, setNavbarBg] = useState(false);
   const [activeLink, setActiveLink] = useState('home')
   const [showSideBar, setShowSideBar] = useState(false)
+  const sections = ['home', 'about', 'services', 'skills', 'projects', 'contactme'];
 
-  const handleSetActive = (to) => {
-    setActiveLink(to);
-  };
-
-  // Function to handle scroll event
   const handleScroll = () => {
     if (window.scrollY > 0) {
-        setNavbarBg(true); // Apply background color
+      setNavbarBg(true); // Apply background color
     } else {
         setNavbarBg(false); // Remove background color
     }
+    const scrollPos = window.scrollY + window.innerHeight / 2; // middle of the viewport
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
+        if (scrollPos >= offsetTop && scrollPos < offsetTop + offsetHeight) {
+          setActiveLink(section);
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleSetActive = (to) => {
+    setActiveLink(to);
   };
 
   // Effect to add scroll event listener
@@ -64,6 +82,12 @@ const Header = () => {
           <Link to="projects" smooth={true} duration={500}>
           <button onClick={()=>handleSetActive('projects')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'projects' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Projects</button>
           </Link>
+          {
+            navbarBg && 
+            <Link to="contactme" smooth={true} duration={500}>
+            <button onClick={()=>handleSetActive('contactme')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'contactme' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Contact</button>
+            </Link>
+          }
         </nav>
 
         {/* Hamburger Button */}
@@ -86,19 +110,22 @@ const Header = () => {
           {/* Links */}
           <nav className='flex flex-col w-full  justify-center items-center gap-10 pe-5'>
           <Link to="home" smooth={true} duration={500}>
-                <button onClick={()=>handleSetActive('home')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'home' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Home</button>
+                <button onClick={()=>{handleSetActive('home');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'home' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Home</button>
           </Link>
           <Link to="about" smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('about')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'about' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>About me</button>
+          <button onClick={()=>{handleSetActive('about');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'about' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>About me</button>
           </Link>
           <Link to="skills"  smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('skills')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'skills' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Skills</button>
+          <button onClick={()=>{handleSetActive('skills');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'skills' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Skills</button>
           </Link>
           <Link to="services" smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>
+          <button onClick={()=>{handleSetActive('services');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>
           </Link>
           <Link to="projects" smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('projects')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'projects' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Projects</button>
+          <button onClick={()=>{handleSetActive('projects');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'projects' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Projects</button>
+          </Link>
+          <Link to="contactme" smooth={true} duration={500}>
+            <button onClick={()=>{handleSetActive('contactme');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'contactme' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Contact</button>
           </Link>
           </nav>
         </aside>

@@ -15,7 +15,7 @@ const Services = () => {
   },[])
 
   return (
-    <div className='w-full h-full flex flex-col items-center gap-20 bg-themeBlue text-white pt-10 pb-24 '>
+    <div id='services' className='w-full h-full flex flex-col items-center gap-20 bg-themeBlue text-white pt-10 pb-24 '>
       <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl font-bold underline underline-offset-[9px]'>My Services</h1>
 
       {/* Service List */}

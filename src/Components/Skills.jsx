@@ -120,7 +120,7 @@ const Skills = () => {
 
 
   return (
-    <div className='w-full h-full bg-themeBlue text-white p-10 flex flex-col gap-10'>
+    <div id='skills' className='w-full h-full bg-themeBlue text-white p-10 flex flex-col gap-10'>
             <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl text-center font-bold underline underline-offset-[9px]'>My Skills</h1>
 
             {/* Navigation */}

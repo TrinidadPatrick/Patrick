@@ -28,7 +28,7 @@ const AboutMe = () => {
 
 
   return (
-    <div className='w-full max-w-[1920px] mx-auto flex lg:gap-10 justify-center items-center h-full py-20 bg-themeBlue text-white px-10 lg:px-20'>
+    <div id='about' className='w-full max-w-[1920px] mx-auto flex lg:gap-10 justify-center items-center h-full py-20 bg-themeBlue text-white px-10 lg:px-20'>
 
       {/* Left Section */}
       <div data-aos={isMobile ? '' : 'zoom-in'} className='hidden md:flex w-72 h-72 semiMd:w-80 semiMd:h-80 lg:w-96 lg:h-96 xl:w-[35rem] xl:h-[35rem]  justify-center '>

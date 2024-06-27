@@ -7,7 +7,7 @@ import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 const ContactMe = () => {
     const year = new Date().getFullYear()
   return (
-    <div className='w-full h-full flex flex-col bg-themeBlue pt-10'>
+    <div id='contactme' className='w-full h-full flex flex-col bg-themeBlue pt-1'>
         <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl text-white xl:text-4xl text-center  font-bold underline underline-offset-[9px]'>Contact me</h1>
 
         <div className='w-full h-full flex gap-5 mt-10'>

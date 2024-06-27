@@ -10,9 +10,17 @@ import { Link } from 'react-scroll';
 
 const Introduction = () => {
 
+    function sendEmail() {
+        const email = 'trinidadpatrick019@gmail.com';
+        const subject = 'Contacting You';
+        const body = 'Hello, I would like to get in touch with you.';
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoLink;
+    }
 
   return (
-    <main className=''>
+    <main id='home' className=''>
     <div style={{ backgroundImage: `url(${HomeBG})`, backgroundRepeat : 'no-repeat', backgroundPosition : 'top', backgroundSize : 'cover'}} className='max-w-[1920px] mx-auto bg-black origin-top bg-center h-screen max-h-[1080px] flex gap-10 items-center px-10 py-20'>
         {/* Links sections Facebook, Github, and LinkedIn */}
         <div className='hidden sm:flex w-7 gap-6 items-center flex-col py-10'>
@@ -40,10 +48,8 @@ const Introduction = () => {
             <span className='text-white text-center  w-full text-[2.5rem] sm:text-5xl  font-bold '>WEB DEVELOPER</span>
             {/* Buttons */}
             <div className='w-full flex flex-wrap justify-center sm:justify-start gap-4'>
-                <Link to="contactme" smooth={true} duration={500}>
-                    <button className='text-white hover:bg-themeGreenLight bg-themeGreen px-4 py-2 rounded'>Contact me</button>
-                </Link>
-                <button className='text-white hover:border-themeGreenLight border border-white px-4 py-2 rounded'>Resume</button>
+                    <button onClick={()=>sendEmail()} className='text-white hover:bg-themeGreenLight bg-themeGreen px-4 py-2 rounded'>Contact me</button>
+                <a href="/src/Utilities/Resume/Trinidad_Patrick_Resume.pdf" download="Trinidad_Patrick_Resume.pdf" target='_blank' className='text-white hover:border-themeGreenLight cursor-pointer border border-white px-4 py-2 rounded'>Resume</a>
             </div>
 
             {/* Links */}

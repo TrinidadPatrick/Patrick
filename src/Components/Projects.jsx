@@ -102,7 +102,7 @@ const Projects = () => {
         return {
             ...item,
             renderItem: (
-                <div className={`mx-auto p-2 bg-themeBlueOpac projectBox rounded-md flex flex-col gap-2 aspect-[2] lg:mx-5 w-full  text-2xl text-white transition-all duration-700 ${currentSlide === item.id ? 'z-10 lg:scale-[1.6] xl:scale-[1.2] ': ' scale-[0.9] backdrop-blur-sm opacity-25 '}`}>
+                <div className={`mx-auto p-2 bg-themeBlueOpac projectBox rounded-md flex flex-col gap-2 aspect-[2] lg:mx-5 w-full  text-2xl text-white transition-all duration-700 ${currentSlide === item.id ? 'z-10 lg:scale-[1.4] xl:scale-[1.2] ': ' scale-[0.9] backdrop-blur-sm opacity-25 '}`}>
                   {/* Image */}
                   <div className='w-full flex overflow-hidden aspect-video'>
                     <Carousel showIndicators={false} 
@@ -137,8 +137,8 @@ const Projects = () => {
                   <div className='w-full flex gap-2 flex-wrap  pb-2 mt-5'>
                     {
                       item.techStack.map((stack, index)=>(
-                        <div key={index} className='text-extraXs leading-6 px-3 flex items-center font-light border border-themeGreen rounded-full'>
-                          <p className='mt-0.5'>{stack}</p>
+                        <div key={index} className='text-extraXs leading-6 px-2 xl:px-3 flex items-center font-light border border-themeGreen rounded-full'>
+                          <p className='mt-0.5 '>{stack}</p>
                         </div>
                       ))
                     }
@@ -160,13 +160,13 @@ const Projects = () => {
 
   const MobileCarousel = () => {
     return (
-      <div style={{width : `${size.width - 20}px`}} className='flex md:hidden mx-auto h-full pb-10 mt-10 '>
+      <div style={{width : `${size.width - 20}px`}} className='flex  md:hidden mx-auto h-fit mt-10 '>
           <Carousel infiniteLoop showArrows={false} swipeable={true}
-          showIndicators={true} showStatus={false} showThumbs={false} className=' w-full  h-full pb-10 flex'>
+          showIndicators={true} showStatus={false} showThumbs={false} className=' w-full  h-full  flex'>
               {
                 mockItems?.map((item, index) => {
                   return (
-                <div key={index} className={`w-full  p-2 flex flex-col gap-2 projectBox mb-10  rounded-lg mx-auto bg-themeBlueOpac`}>
+                <div key={index} className={`w-[90%]  p-2 flex flex-col gap-2 projectBox mb-14 h-[90%] rounded-lg mx-auto bg-themeBlueOpac`}>
                   {/* Image */}
                   <div className='w-full flex overflow-hidden aspect-video'>
                     <Carousel showIndicators={false} showArrows={true}  swipeable={false} 
@@ -218,7 +218,7 @@ const Projects = () => {
 
 
   return (
-    <div className='w-full h-full flex flex-col bg-themeBlue text-white px-2 py-16'>
+    <div id='projects' className='w-full h-full flex flex-col bg-themeBlue text-white px-2 py-16'>
       <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl text-center  font-bold underline underline-offset-[9px]'>My Projects</h1>
 
       {/* Carousel */}
