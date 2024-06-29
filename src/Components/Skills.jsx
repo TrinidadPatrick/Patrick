@@ -22,7 +22,12 @@ const Skills = () => {
     },
     {
     icon : (<span className="icon-[logos--javascript]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'JAVASCRIPT',
+    title : 'JavaScript',
+    category : 'FE',
+    },
+    {
+    icon : (<span className="icon-[logos--typescript-icon]"  style={{width: "4em", height: "4em"}}></span>),
+    title : 'TypeScript',
     category : 'FE',
     },
     {
@@ -33,6 +38,11 @@ const Skills = () => {
     {
     icon : (<span className="icon-[tabler--brand-react-native]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'React Native',
+    category : 'FE',
+    },
+    {
+    icon : (<span className="icon-[devicon--nextjs]"  style={{width: "4em", height: "4em"}}></span>),
+    title : 'NextJS',
     category : 'FE',
     },
     {
