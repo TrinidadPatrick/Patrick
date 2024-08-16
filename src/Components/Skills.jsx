@@ -61,6 +61,11 @@ const Skills = () => {
     category : 'BE',
     },
     {
+      icon : (<span className="icon-[devicon--csharp]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'C#',
+      category : 'BE',
+    },
+    {
     icon : (<span className="icon-[skill-icons--expressjs-light]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'EXPRESS JS',
     category : 'BE',
@@ -83,6 +88,11 @@ const Skills = () => {
     {
     icon : (<span className="icon-[skill-icons--mysql-light]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'MySQL',
+    category : 'DB',
+    },
+    {
+    icon : (<span className="icon-[vscode-icons--file-type-plsql]"  style={{width: "4em", height: "4em"}}></span>),
+    title : 'PL/SQL',
     category : 'DB',
     },
     {
