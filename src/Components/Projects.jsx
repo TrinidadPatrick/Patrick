@@ -79,6 +79,14 @@ const Projects = () => {
         img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719473980/Screenshot_2024-06-27_153923_sjxgit.png'],
         projectLink : 'https://password-generator-plum-three.vercel.app/'
     },
+    {
+        id: 'item-8',
+        title: 'Authify',
+        description : "An authentication system with different features such as oath, forgot password, and more.",
+        techStack : ['Nextjs', 'Tailwind', 'MongoDB', 'Shadcn', 'Nodemailer'],
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1724578606/Screenshot_2024-08-25_173128_zydmtx.png'],
+        projectLink : 'https://authify-three.vercel.app/'
+    },
   
   ]
   const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
