@@ -20,7 +20,7 @@ const Projects = () => {
         description : "A web-based application for searching and booking services based on the user's location, with chat integration.",
         techStack : ['React', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB'],
         img : [
-          kanoahImg,
+          'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1727500875/Minimalist_Website_Launch_Computer_Mockup_Instagram_Post_1000_x_750_px_1_lg1ngl.png',
           'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS1_hym6xj.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328952/SS2_fs1dhc.png',
           'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS3_qjdw0m.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328952/SS4_oztgjh.png',
           'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS5_ww7jb8.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328954/SS9_mm9bmr.png', 
@@ -34,7 +34,7 @@ const Projects = () => {
         title: 'Swift POS',
         description : "A Point of Sale system with user-friendly UI. It also comes with daily, monthly, and annualy reports and expenses.",
         techStack : ['React', 'Tailwind', 'MySQL', 'Laravel'],
-        img : [swiftPOSImg, 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180810_uusdv7.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180902_kwlr93.png',
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1727501033/Modern_Neutral_Web_Design_Digital_Product_Promotion_Instagram_Post_1_y86lt8.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180810_uusdv7.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180902_kwlr93.png',
               'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180913_jopmhs.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719396655/Screenshot_2024-06-26_180927_fvxp8q.png'],
         video : `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447816/SwiftPOSVideoDemo_xukej0.mp4`,
     },
