@@ -37,15 +37,16 @@ const AboutMe = () => {
 
       <div data-aos={isMobile ? '' : 'zoom-in-left'} className='flex-1 md:ps-16 '>
         <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl font-bold underline underline-offset-[9px]'>About me</h1>
-        <p className='text-xl md:text-sm lg:text-[1rem] xl:text-lg mt-5'>Hi, im John Patrick Trinidad, a fresh graduate of <span className='text-themeGreen'>Bachelor of Science in Information Technology</span> from 
-        <span className='text-themeGreen'> First Asia Institute of Technology and Humanities</span>.
+        <p className='text-xl md:text-sm lg:text-[1rem] xl:text-lg mt-5'>Hi, im John Patrick Trinidad,
         </p>
 
         <p className='mt-5 text-xl md:text-sm lg:text-[1rem] xl:text-lg'>
-        As a passionate learner and aspiring web developer, 
-        I am driven by a love for technology and a commitment to continuous learning. 
-        I thrive in collaborative environments, bringing a problem-solving mindset and attention to detail to every project. 
-        When I'm not coding, I enjoy exploring new technologies, and participating in coding challenges in Leetcode and Codewars.
+        I'm a web developer who loves solving problems with clean and efficient code. 
+        I quickly pick up new technologies and enjoy working with teams to improve projects using modern frameworks. 
+        My focus is on building user-friendly and high-performance applications that meet real-world needs. 
+        I’m always looking to improve my skills through coding challenges and hands-on projects.
+
+
         </p>
       </div>
 

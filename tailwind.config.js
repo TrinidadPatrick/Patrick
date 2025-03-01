@@ -1,5 +1,4 @@
 import { addDynamicIconSelectors } from '@iconify/tailwind';
-const withMT = require("@material-tailwind/react/utils/withMT");
 
 /** @type {import('tailwindcss').Config} */
 export default {
