@@ -38,7 +38,7 @@ const ContactMe = () => {
                 {/* Phone */}
                 <div className='flex items-center gap-3'>
                     <FaPhone color='white' size={20} />
-                    <p className='text-white font-light'>0991 413 8519</p>
+                    <p className='text-white font-light'>0967 314 3709</p>
                 </div>
                 {/* Message Button */}
                 <button className='text-white flex px-3 py-2 bg-themeGreenLight w-fit items-center rounded-full gap-2'>
