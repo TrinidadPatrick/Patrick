@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { TypeAnimation } from 'react-type-animation';
-import Profile from '../Utilities/Images/Trinidad_Profile.jpg'
+import Profile from '../Utilities/Images/Trinidad_Profile.jpeg'
 import HomeBG from '../Utilities/Images/HomeBG.svg'
 import Blob1 from '../Utilities/Images/Blob1.svg'
 import Blob2 from '../Utilities/Images/Blob2.svg'

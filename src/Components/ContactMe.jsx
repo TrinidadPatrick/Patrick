@@ -6,6 +6,16 @@ import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 
 const ContactMe = () => {
     const year = new Date().getFullYear()
+
+    function sendEmail() {
+      const email = 'trinidadpatrick019@gmail.com';
+      const subject = 'Contacting You';
+      const body = 'Hello, I would like to get in touch with you.';
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
+  }
+
   return (
     <div id='contactme' className='w-full h-full flex flex-col bg-themeBlue pt-1'>
         <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl text-white xl:text-4xl text-center  font-bold underline underline-offset-[9px]'>Contact me</h1>
@@ -32,7 +42,7 @@ const ContactMe = () => {
                 </div>
                 {/* Message Button */}
                 <button className='text-white flex px-3 py-2 bg-themeGreenLight w-fit items-center rounded-full gap-2'>
-                <p className='pt-0.5'>Let's Talk</p>
+                <button onClick={sendEmail()}><p className='pt-0.5'>Let's Talk</p></button>
                 <IoIosArrowRoundForward size={20} />
                 </button>
             </div>
