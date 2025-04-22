@@ -42,7 +42,7 @@ const ContactMe = () => {
                 </div>
                 {/* Message Button */}
                 <button className='text-white flex px-3 py-2 bg-themeGreenLight w-fit items-center rounded-full gap-2'>
-                <button onClick={sendEmail()}><p className='pt-0.5'>Let's Talk</p></button>
+                <button onClick={()=>sendEmail()}><p className='pt-0.5'>Let's Talk</p></button>
                 <IoIosArrowRoundForward size={20} />
                 </button>
             </div>

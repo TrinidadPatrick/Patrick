@@ -30,7 +30,17 @@ const Projects = () => {
         projectLink : 'https://kanoah-web.vercel.app/'
     },
     {
-        id: 'item-2',
+      id: 'item-2',
+      title: 'Chat Wave',
+      description : "A simple Chat system with realtime messaging and frienship features.",
+      techStack : ['React', 'Tailwind', 'Nodejs', 'Mongodb', 'Socket.io'],
+      img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745302069/Screenshot_2025-04-22_133759_edj8pl.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745318088/Screenshot_2025-04-22_183330_ekd0kz.png', 'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745319907/Screenshot_2025-04-22_183641_ku29cj.png',
+            'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745318157/Screenshot_2025-04-22_183547_kf78hl.png'],
+      video : ``,
+      projectLink : 'https://convo-wave.vercel.app/'
+  },
+    {
+        id: 'item-3',
         title: 'Swift POS',
         description : "A Point of Sale system with user-friendly UI. It also comes with daily, monthly, and annualy reports and expenses.",
         techStack : ['React', 'Tailwind', 'MySQL', 'Laravel'],
@@ -39,7 +49,7 @@ const Projects = () => {
         video : `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447816/SwiftPOSVideoDemo_xukej0.mp4`,
     },
     {
-        id: 'item-3',
+        id: 'item-4',
         title: 'Kanoah Mobile',
         description : "A mobile-based application for searching and booking services based on the user's location, with chat integration.",
         techStack : ['React native', 'Tailwind', 'NodeJS', 'ExpressJS', 'MongoDB'],
@@ -47,7 +57,7 @@ const Projects = () => {
         projectLink : 'https://drive.google.com/file/d/15DMU35mSjC7nmW6iJwFebrdgyO_zHbwe/view?usp=drive_link'
     },
     {
-        id: 'item-4',
+        id: 'item-5',
         title: 'Advance Calculator',
         description : "A semi-advanced calculator that supports continuous equations.",
         techStack : ['HTML', 'Tailwind', 'Javascript'],
@@ -55,7 +65,7 @@ const Projects = () => {
         projectLink : 'https://advance-calculator-rose.vercel.app/'
     },
     {
-        id: 'item-5',
+        id: 'item-6',
         title: 'Crown Funding Page',
         description : "A crown funding page challenge from Frontend-Mentor",
         techStack : ['HTML', 'Tailwind', 'Javascript'],
@@ -63,7 +73,7 @@ const Projects = () => {
         projectLink : 'https://crowd-funding-page-opal.vercel.app/'
     },
     {
-        id: 'item-6',
+        id: 'item-7',
         title: 'Multi Step Form',
         description : "A Multi Step Form challenge from Frontend-Mentor where use can select plans and addons",
         techStack : ['React', 'Tailwind', 'Redux'],
@@ -72,7 +82,7 @@ const Projects = () => {
         projectLink : 'https://multi-step-form-sooty-seven.vercel.app/'
     },
     {
-        id: 'item-7',
+        id: 'item-8',
         title: 'Password Generator',
         description : "A password generator system with various options, based on a Frontend Mentor challenge.",
         techStack : ['React', 'Bootstrap'],
@@ -80,7 +90,7 @@ const Projects = () => {
         projectLink : 'https://password-generator-plum-three.vercel.app/'
     },
     {
-        id: 'item-8',
+        id: 'item-9',
         title: 'Authify',
         description : "An authentication system with different features such as oath, forgot password, and more.",
         techStack : ['Nextjs', 'Tailwind', 'MongoDB', 'Shadcn', 'Nodemailer'],
@@ -112,9 +122,9 @@ const Projects = () => {
             renderItem: (
                 <div className={`mx-auto p-2 bg-themeBlueOpac projectBox rounded-md flex flex-col gap-2 aspect-[2] lg:mx-5 w-full  text-2xl text-white transition-all duration-700 ${currentSlide === item.id ? 'z-10 lg:scale-[1.4] xl:scale-[1.2] ': ' scale-[0.9] backdrop-blur-sm opacity-25 '}`}>
                   {/* Image */}
-                  <div className='w-full flex overflow-hidden aspect-video'>
+                  <div className='w-full flex overflow-hidden aspect-video '>
                     <Carousel showIndicators={false} 
-                    showThumbs={false} stopOnHover showStatus={false} autoPlay={currentSlide === item.id ? true : false}  infiniteLoop interval={5000} >
+                    showThumbs={false} stopOnHover showStatus={false} autoPlay={false} infiniteLoop interval={5000} >
                       {
                         item.img.map((imgsrc, index)=>(
                           <div key={index} className='w-full h-full p-[1px] '>
