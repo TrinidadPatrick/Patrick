@@ -97,6 +97,19 @@ const Projects = () => {
         img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1724578606/Screenshot_2024-08-25_173128_zydmtx.png'],
         projectLink : 'https://authify-three.vercel.app/'
     },
+    {
+        id: 'item-10',
+        title: 'AniHive',
+        description : "Anime website to browse animes. Integrated using Jikan API.",
+        techStack : ['ReactJS', 'Tailwind', 'JikanAPI'],
+        img : ['https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747472979/Beige_Soft_Mockup_Launching_New_Website_Facebook_Post_2_gkhqsi.png',
+      'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473224/Screenshot_2025-05-17_171331_strmju.png', 
+      'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473564/Screenshot_2025-05-17_171910_mkw50n.png',
+      'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473736/Screenshot_2025-05-17_172038_avgqur.png',
+      'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473737/Screenshot_2025-05-17_172047_pdjiqc.png',
+      'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473738/Screenshot_2025-05-17_172156_cmjnlb.png'],
+        projectLink : 'https://ani-hive-ilrc.vercel.app/'
+    },
   
   ]
   const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
@@ -138,8 +151,8 @@ const Projects = () => {
                                     item.projectLink && <button onClick={()=> window.open(item.projectLink, '_blank')} className=' text-xs px-2 pt-1.5 rounded-sm pb-1 bg-themeGreen '>View Project</button>
                                   }
                                 </div>
-                                <div className=' h-full overflow-hidden rounded-md bg-blue-500 w-full '>
-                                  <img  className=' origin-center h-full cursor-pointer group-hover:brightness-50 object-cover ' src={imgsrc} alt="" />
+                                <div className='h-full overflow-hidden rounded-md bg-blue-500 w-full '>
+                                  <img  className=' origin-center h-full cursor-pointer group-hover:brightness-50 object-fit ' src={imgsrc} alt="" />
                                 </div>
                               </div>
                             </div>
