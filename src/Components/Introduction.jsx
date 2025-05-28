@@ -69,7 +69,7 @@ const Introduction = () => {
         </div>
 
         {/* My Image */}
-        <div className='w-full h-full flex flex-col justify-center items-center gap-3 py-20 px-5 xl:px-20  '>
+        <div className='w-full h-full hidden lg:flex flex-col justify-center items-center gap-3 py-20 px-5 xl:px-20  '>
         {/* <span className='text-white hidden lg:block text-start  w-full text-[2rem] sm:text-2xl  font-bold '>Featured Projects</span>
         <div className='hidden  lg:grid flex-1 h-full justify-center items-center relative grid-cols-2 gap-10'>
             <div className='bg-red-100 serviceBoxShadow h-full w-full rounded overflow-hidden flex shadow-lg ' >
