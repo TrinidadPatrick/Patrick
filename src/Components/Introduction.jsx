@@ -21,6 +21,8 @@ const Introduction = () => {
         window.location.href = mailtoLink;
     }
 
+    
+
   return (
     <main id='home' className=''>
     <div style={{ backgroundImage: `url(${HomeBG})`, backgroundRepeat : 'no-repeat', backgroundPosition : 'top', backgroundSize : 'cover'}} className='max-w-[1920px] mx-auto bg-black origin-top bg-center h-screen max-h-[1080px] flex gap-10 items-center px-10 py-20'>
@@ -51,7 +53,7 @@ const Introduction = () => {
             {/* Buttons */}
             <div className='w-full flex flex-wrap justify-center sm:justify-start gap-4'>
                     <button onClick={()=>sendEmail()} className='text-white hover:bg-themeGreenLight bg-themeGreen px-4 py-2 rounded'>Contact me</button>
-                <a href="/src/Utilities/Resume/Trinidad_Patrick_Resume.pdf" download="Trinidad_Patrick_Resume.pdf" target='_blank' className='text-white hover:border-themeGreenLight cursor-pointer border border-white px-4 py-2 rounded'>Resume</a>
+                <a href="../../public/Trinidad_Patrick_Resume.pdf" download="Trinidad_Patrick_Resume.pdf" target='_blank' className='text-white hover:border-themeGreenLight cursor-pointer border border-white px-4 py-2 rounded'>Resume</a>
             </div>
 
             {/* Links */}
