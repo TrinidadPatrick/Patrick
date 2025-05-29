@@ -53,7 +53,7 @@ const Introduction = () => {
             {/* Buttons */}
             <div className='w-full flex flex-wrap justify-center sm:justify-start gap-4'>
                     <button onClick={()=>sendEmail()} className='text-white hover:bg-themeGreenLight bg-themeGreen px-4 py-2 rounded'>Contact me</button>
-                <a href="../../public/Trinidad_Patrick_Resume.pdf" download="Trinidad_Patrick_Resume.pdf" target='_blank' className='text-white hover:border-themeGreenLight cursor-pointer border border-white px-4 py-2 rounded'>Resume</a>
+                <a href="/public/Trinidad_Patrick_Resume.pdf" download="Trinidad_Patrick_Resume.pdf" target='_blank' className='text-white hover:border-themeGreenLight cursor-pointer border border-white px-4 py-2 rounded'>Resume</a>
             </div>
 
             {/* Links */}
