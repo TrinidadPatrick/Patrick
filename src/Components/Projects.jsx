@@ -232,7 +232,7 @@ const Projects = () => {
               }`} />
               
               {/* Image Container */}
-              <div className="relative w-full  aspect-video overflow-hidden ">
+              <div className="relative w-full overflow-hidden ">
                 <Carousel 
                   showIndicators={false} 
                   showThumbs={false} 
@@ -244,10 +244,10 @@ const Projects = () => {
                   className="h-full"
                 >
                   {item.img.map((imgsrc, index) => (
-                    <div key={index} className="relative h-fit group/image flex ">
-                      <div className='h-full w-full bg-red-100   '>
+                    <div key={index} className="relative group/image flex ">
+                      <div className='h-full w-full '>
                       <img 
-                        className="w-full h-full object-cover  transition-transform duration-700 " 
+                        className="w-full h-[25rem] semiMd:h-[220px] object-cover  transition-transform duration-700 " 
                         src={imgsrc} 
                         alt={`${item.title} screenshot ${index + 1}`}
                         loading="lazy"
@@ -478,7 +478,7 @@ const Projects = () => {
 
           {/* Carousel Container */}
           <div 
-            style={{ width: `${Math.min(size.width - 0, 1500)}px` }} 
+            style={{ width: `${Math.min(size.width - 0, 1300)}px` }} 
             className="overflow-hidden pb-20 pt-14"
           >
             {carouselFragment}
