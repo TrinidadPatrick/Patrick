@@ -433,7 +433,7 @@ const Projects = () => {
     <div 
       id='projects' 
       ref={sectionRef}
-      className="relative min-h-screen text-white px-4 py-20 mt-10 overflow-auto"
+      className="relative text-white px-4 pt-20 mt-10 overflow-auto"
     >
       {/* Background Effects */}
       {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-pink-600/5" />

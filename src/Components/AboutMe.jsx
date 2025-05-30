@@ -38,7 +38,7 @@ const AboutMe = () => {
 
 
   return (
-    <section id='about' className="min-h-screen text-white xl:py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id='about' className="pt-24  text-white xl:py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(15)].map((_, i) => (

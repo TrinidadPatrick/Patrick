@@ -42,10 +42,8 @@ const Introduction = () => {
     
 
   return (
-    <main id='home' className=''>
-  <div className="min-h-screen  text-white overflow-hidden">
+    <div id='home' className="pt-24 lg:px-20 xl:px-0  text-white overflow-hidden">
       <FloatingParticles />
-
 
       {/* Social Links */}
       <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-30 hidden lg:flex flex-col space-y-4">
@@ -65,8 +63,8 @@ const Introduction = () => {
       </div>
 
       {/* Hero Section */}
-      <main className="relative pt-16">
-        <section className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8">
+      <main className="relative pt-16 ">
+        <section className="py-24 flex items-center px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               
@@ -85,21 +83,39 @@ const Introduction = () => {
                   </p>
                 </div>
 
-                <div className="flex justify-center sm:justify-start flex-wrap gap-4">
-                  <button onClick={()=>sendEmail()} className="group bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 px-4 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25 flex items-center space-x-2">
+                <div className="flex flex-col items-center w-full sm:items-start sm:flex-row justify-center sm:justify-start flex-wrap gap-4">
+                  <button onClick={()=>sendEmail()} className="group w-[11rem] bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 px-4 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25 flex items-center justify-center space-x-2">
                     <Mail size={20} />
-                    <span>Contact me</span>
-                    {/* <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform duration-200" /> */}
+                    <span className=' whitespace-nowrap'>Contact me</span>
                   </button>
                   
-                  <button onClick={()=> window.location.href='/Trinidad_Patrick_Resume.pdf'} className="group border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-slate-900 px-4 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center space-x-2">
+                  <button onClick={()=> window.location.href='/Trinidad_Patrick_Resume.pdf'} className="w-[11rem] group border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-slate-900 px-4 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
                     <Download size={20} />
-                    <span>Resume</span>
+                    <span className=' whitespace-nowrap'>Resume</span>
                   </button>
                 </div>
 
+                {/* Social Links */}
+                <div className=" z-30 flex w-full justify-center sm:justify-start lg:hidden gap-4">
+                {[
+                  { Icon: Facebook, href: 'https://www.facebook.com/patrick.trinidad.5872/', color: 'hover:text-blue-400' },
+                  { Icon: Github, href: 'https://github.com/TrinidadPatrick', color: 'hover:text-gray-400' },
+                  { Icon: Linkedin, href: 'https://www.linkedin.com/in/john-patrick-trinidad-71a4b92ab/', color: 'hover:text-blue-500' },
+                ].map(({ Icon, href, color }, index) => (
+                  <a
+                    key={index}
+                    href={href}
+                    className={`w-12 h-12 bg-slate-800/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl flex items-center justify-center text-slate-400 ${color} transition-all duration-300 hover:scale-110 hover:bg-slate-700/50 group`}
+                  >
+                    <Icon size={20} className="group-hover:scale-110 transition-transform duration-200" />
+                  </a>
+                ))}
+                </div>
+
+                <div className='border-t border-slate-700/50 sm:hidden'/>
+
                 {/* Skills Preview */}
-                <div className="flex justify-center sm:justify-start flex-wrap gap-3 pt-8">
+                <div className="flex justify-center sm:justify-start flex-wrap gap-3 lg:pt-8">
                   {['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind'].map((skill, index) => (
                     <span
                       key={skill}
@@ -163,7 +179,6 @@ const Introduction = () => {
         </section>
       </main>
     </div>
-    </main>
   )
 }
 
