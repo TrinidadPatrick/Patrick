@@ -17,8 +17,9 @@ const ContactMe = () => {
   }
 
   return (
-    <div id='contactme' className='w-full h-full flex flex-col bg-themeBlue pt-1'>
-        <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl text-white xl:text-4xl text-center  font-bold underline underline-offset-[9px]'>Contact me</h1>
+    <div id='contactme' className='w-full h-full flex flex-col  pt-20'>
+        <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent xl:text-4xl text-center  font-bold'>Contact me</h1>
+        <div className="w-24 mt-5 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
 
         <div className='w-full h-full flex gap-5 mt-10'>
             <div className='flex-1 hidden sm:flex justify-center items-center'>
@@ -41,15 +42,15 @@ const ContactMe = () => {
                     <p className='text-white font-light'>0967 314 3709</p>
                 </div>
                 {/* Message Button */}
-                <button className='text-white flex px-3 py-2 bg-themeGreenLight w-fit items-center rounded-full gap-2'>
+                <div className='text-white flex px-3 py-2 bg-themeGreenLight w-fit items-center rounded-full gap-2'>
                 <button onClick={()=>sendEmail()}><p className='pt-0.5'>Let's Talk</p></button>
                 <IoIosArrowRoundForward size={20} />
-                </button>
+                </div>
             </div>
         </div>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-6 mt-10">
+        <footer className=" text-white py-6 mt-10">
       <div className="container mx-auto text-center">
         <p>© All rights reserved. Patrick - {year}</p>
         <div className="flex justify-center space-x-4 mt-4">

@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdOutlineDesignServices } from "react-icons/md";
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import WindowSizeProvider from './WindowSizeProvider';
+import { Monitor, Globe, Palette, Shield, ChevronRight, Sparkles } from 'lucide-react';
 
 const Services = () => {
   const {size} = WindowSizeProvider()
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   useEffect(()=>{
     AOS.init({
@@ -14,46 +16,162 @@ const Services = () => {
     })
   },[])
 
+  function sendEmail() {
+    const email = 'trinidadpatrick019@gmail.com';
+    const subject = 'Contacting You';
+    const body = 'Hello, I would like to get in touch with you.';
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+}
+
+  const services = [
+    {
+      id: 1,
+      icon: Monitor,
+      title: "Responsive Web Design",
+      description: "Crafting pixel-perfect, responsive websites that adapt seamlessly across all devices and screen sizes, ensuring your brand looks stunning everywhere.",
+      gradient: "from-blue-500 to-cyan-400",
+      hoverGradient: "from-blue-400 to-cyan-300",
+      features: ["Mobile-First Approach", "Cross-Browser Compatible", "Performance Optimized"]
+    },
+    {
+      id: 2,
+      icon: Globe,
+      title: "Web Application",
+      description: "Building dynamic, scalable web applications with cutting-edge technologies that deliver exceptional user experiences and robust functionality.",
+      gradient: "from-purple-500 to-pink-400",
+      hoverGradient: "from-purple-400 to-pink-300",
+      features: ["Full-Stack Development", "API Integration", "Real-time Features"]
+    },
+    {
+      id: 3,
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "Creating intuitive, user-centered designs that combine aesthetic excellence with functional usability to drive engagement and conversions.",
+      gradient: "from-emerald-500 to-teal-400",
+      hoverGradient: "from-emerald-400 to-teal-300",
+      features: ["User Research", "Prototyping", "Design Systems"],
+      highlighted: true
+    },
+    {
+      id: 4,
+      icon: Shield,
+      title: "Security Solutions",
+      description: "Implementing comprehensive security measures to protect your digital assets against modern threats and vulnerabilities across all platforms.",
+      gradient: "from-orange-500 to-red-400",
+      hoverGradient: "from-orange-400 to-red-300",
+      features: ["Penetration Testing", "Security Audits", "Compliance"]
+    }
+  ];
+
   return (
-    <div id='services' className='w-full h-full flex flex-col items-center gap-20 bg-themeBlue text-white pt-10 pb-24 '>
-      <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl xl:text-4xl font-bold underline underline-offset-[9px]'>My Services</h1>
+    <section id='services' className="min-h-screen  py-0 px-6 relative overflow-hidden">
+      
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
 
-      {/* Service List */}
-      <div data-aos={size.width <= 768 ? '' : 'zoom-out'}  className='flex flex-wrap mt-10 gap-16 justify-center semiMd:grid semiSm:grid-cols-2 semiMd:grid-cols-4 semiMd:gap-5 xl:gap-10 w-full px-10 xl:px-20'>
-
-        <div className='bg-themeBlueLight w-[300px] h-[250px] xl:h-[300px] semiMd:w-full serviceBoxShadow py-3 px-3 lg:px-4 flex flex-col rounded semiMd:aspect-square relative'>
-          <div className=' w-[4.5rem] lg:w-20 xl:w-24  aspect-square bg-themeGreen rounded absolute mx-auto -top-10 lg:-top-12 left-[50%] -translate-x-[50%] flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" width={`${size.width <= 1023 ? '2.5rem' : '3rem'}`} height={`${size.width <= 1023 ? '2.5rem' : '3rem'}`} viewBox="0 0 24 24"><path fill="#FFFFFF" d="M4 6v10h5v-4a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v4h2V6zM0 20v-2h4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h4v2h-6a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2zm11.5 0a.5.5 0 0 0-.5.5a.5.5 0 0 0 .5.5a.5.5 0 0 0 .5-.5a.5.5 0 0 0-.5-.5m4 0a.5.5 0 0 0-.5.5a.5.5 0 0 0 .5.5a.5.5 0 0 0 .5-.5a.5.5 0 0 0-.5-.5M13 20v1h1v-1zm-2-8v7h5v-7z"/></svg>
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div data-aos="fade-up" className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-6">
+            <Sparkles className="w-4 h-4 text-emerald-400" />
+            <span className="text-sm text-gray-300 font-medium">What I Offer</span>
           </div>
-          <h2 className='text-center text-white text-xl semiMd:text-lg xl:text-2xl font-bold mt-10 semiMd:mt-9 lg:mt-7 xl:mt-14'>Responsive Web Design</h2>
-          <p className='text-base semiMd:text-sm lg:text-sm xl:text-lg leading-5 semiMd:leading-4 xl:leading-6 text-center font-[300] text-gray-300 mt-2 xl:mt-2'>Ensure that the web design is responsive and adjusts seamlessly to various screen sizes across different devices.</p>
+          
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent">
+              My Services
+            </span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className='bg-themeBlueLight w-[300px] h-[250px] xl:h-[300px] semiMd:w-full serviceBoxShadow py-3 px-3 lg:px-4 flex flex-col rounded semiMd:aspect-square relative'>
-          <div className=' w-[4.5rem] lg:w-20 xl:w-24  aspect-square bg-themeGreen rounded absolute mx-auto -top-10 lg:-top-12 left-[50%] -translate-x-[50%] flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" width={`${size.width <= 1023 ? '2rem' : '3rem'}`} height={`${size.width <= 1023 ? '2rem' : '3rem'}`} viewBox="0 0 14 14"><path fill="none" stroke="#FFFFFF" strokeLinecap="round" strokeLinejoin="round" d="M.5 3.494h13M12.5.5h-11a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-11a1 1 0 0 0-1-1"/></svg>
-          </div>
-          <h2 className='text-center text-white text-xl semiMd:text-lg xl:text-2xl font-bold mt-10 semiMd:mt-9 lg:mt-7 xl:mt-14'>Web Application</h2>
-          <p className='text-base semiMd:text-sm lg:text-sm xl:text-lg leading-5 semiMd:leading-4 xl:leading-6 text-center font-[300] text-gray-300 mt-2 xl:mt-2'>Develop a dynamic web applications that provide rich user experiences and advanced functionality. From single-page applications to full-stack development, I have the skills to bring your web app idea to life.</p>
+        {/* Services Grid */}
+        <div data-aos="fade-right" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service) => {
+            const IconComponent = service.icon;
+            const isHovered = hoveredCard === service.id;
+            
+            return (
+              <div
+                key={service.id}
+                className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 ${
+                  service.highlighted 
+                    ? 'ring-2 ring-emerald-400/50 shadow-2xl shadow-emerald-500/20' 
+                    : ''
+                }`}
+                onMouseEnter={() => setHoveredCard(service.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                {/* Card Background with Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${
+                  isHovered ? service.hoverGradient : service.gradient
+                } opacity-10 transition-all duration-500`}></div>
+                
+                {/* Glass Effect Background */}
+                <div className="absolute inset-0 bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-2xl"></div>
+                
+                {/* Highlight Effect */}
+                {service.highlighted && (
+                  <div className="absolute -top-px -left-px -right-px h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
+                )}
+                
+                {/* Card Content */}
+                <div className="relative p-8 h-full flex flex-col">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 mb-6 rounded-xl bg-gradient-to-br ${service.gradient} p-4 shadow-lg transform transition-transform duration-300 ${
+                    isHovered ? 'scale-110 rotate-3' : ''
+                  }`}>
+                    <IconComponent className="w-full h-full text-white" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text transition-all duration-300">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-2 text-xs text-gray-500">
+                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient}`}></div>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                  
+                  
+                </div>
+                
+                {/* Hover Glow Effect */}
+                <div className={`absolute inset-0 rounded-2xl transition-opacity duration-500 ${
+                  isHovered 
+                    ? `opacity-20 shadow-2xl shadow-${service.gradient.split('-')[1]}-500/50` 
+                    : 'opacity-0'
+                }`}></div>
+              </div>
+            );
+          })}
         </div>
 
-        <div className='bg-themeBlueLight w-[300px] h-[250px] xl:h-[300px] semiMd:w-full serviceBoxShadow py-3 px-3 lg:px-4 flex flex-col rounded semiMd:aspect-square relative'>
-          <div className=' w-[4.5rem] lg:w-20 xl:w-24  aspect-square bg-themeGreen rounded absolute mx-auto -top-10 lg:-top-12 left-[50%] -translate-x-[50%] flex items-center justify-center'>
-            <MdOutlineDesignServices size={size.width <= 1023 ? 40 : 50} />
-          </div>
-          <h2 className='text-center text-white text-xl semiMd:text-lg xl:text-2xl font-bold mt-10 semiMd:mt-9 lg:mt-7 xl:mt-14'>UI/UX Design</h2>
-          <p className='text-base semiMd:text-sm lg:text-sm xl:text-base leading-5 semiMd:leading-4 xl:leading-6 text-center font-[300] text-gray-300 mt-2 xl:mt-2'>I provide UI/UX design services to create intuitive and engaging user interfaces. My focus is on delivering exceptional user experiences, ensuring your web application is both visually appealing and easy to use.</p>
-        </div>
-
-        <div className='bg-themeBlueLight w-[300px] h-[250px] xl:h-[300px] semiMd:w-full serviceBoxShadow py-3 px-3 lg:px-4 flex flex-col rounded semiMd:aspect-square relative'>
-          <div className=' w-[4.5rem] lg:w-20 xl:w-24  aspect-square bg-themeGreen rounded absolute mx-auto -top-10 lg:-top-12 left-[50%] -translate-x-[50%] flex items-center justify-center'>
-          <svg xmlns="http://www.w3.org/2000/svg" width={`${size.width <= 1023 ? '2rem' : '3rem'}`} height={`${size.width <= 1023 ? '2rem' : '3rem'}`} viewBox="0 0 32 32"><path fill="#FFFFFF" d="M11 11v6.468a5.02 5.02 0 0 0 2.861 4.52L16 23l2.139-1.013A5.02 5.02 0 0 0 21 17.467V11Zm8 6.468a3.01 3.01 0 0 1-1.717 2.71L16 20.787l-1.283-.607A3.01 3.01 0 0 1 13 17.468V13h6Z"/><path fill="#FFFFFF" d="M30.414 17.414a2 2 0 0 0 0-2.828l-5.787-5.787l2.9-2.862a2.002 2.002 0 1 0-1.44-1.388l-2.874 2.836l-5.799-5.8a2 2 0 0 0-2.828 0L8.799 7.374L5.937 4.472A2.002 2.002 0 1 0 4.55 5.914l2.835 2.873l-5.8 5.799a2 2 0 0 0 0 2.828l5.8 5.799l-2.835 2.873a1.998 1.998 0 1 0 1.387 1.442l2.862-2.9l5.787 5.786a2 2 0 0 0 2.828 0l5.8-5.799l2.872 2.836a1.998 1.998 0 1 0 1.442-1.387l-2.9-2.863ZM16 29L3 16L16 3l13 13Z"/></svg>
-          </div>
-          <h2 className='text-center text-white text-xl semiMd:text-lg xl:text-2xl font-bold mt-10 semiMd:mt-9 lg:mt-7 xl:mt-14'>Security</h2>
-          <p className='text-base semiMd:text-sm lg:text-sm xl:text-base leading-5 semiMd:leading-4 xl:leading-6 text-center font-[300] text-gray-300 mt-2 xl:mt-2'>I ensure that the website's security measures are robust, protecting against threats and vulnerabilities across all devices and platforms.</p>
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <button onClick={()=>sendEmail()} className="group px-8 py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full text-white font-medium hover:shadow-2xl hover:shadow-emerald-500/30 transition-all duration-300 transform hover:scale-105">
+            <span className="flex items-center gap-2">
+              Let's Work Together
+              <ChevronRight className="w-4 h-4 group-hover:transform group-hover:translate-x-1 transition-transform" />
+            </span>
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -12,10 +12,10 @@ import ContactMe from './Components/ContactMe';
 function App() {
 
   return (
-    <div className='App relative overflow-x-hidden flex flex-col items-center w-full max-w-[1920px] mx-auto bg-themeBlue '>
+    <div className='App relative overflow-x-hidden flex flex-col items-center w-full max-w-[1920px] mx-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 '>
       <Header />
 
-      <main className='flex flex-col'>
+      <main className='flex flex-col w-full'>
         <Element name='home'>
           <Introduction />
         </Element>
