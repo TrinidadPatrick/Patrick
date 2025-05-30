@@ -479,7 +479,7 @@ const Projects = () => {
           {/* Carousel Container */}
           <div 
             style={{ width: `${Math.min(size.width - 0, 1500)}px` }} 
-            className="overflow-hidden pb-20 pt-8"
+            className="overflow-hidden pb-20 pt-14"
           >
             {carouselFragment}
           </div>

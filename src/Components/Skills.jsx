@@ -251,7 +251,7 @@ const Skills = () => {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: customStyles }} />
-      <div id='skills' className='w-full min-h-screen  text-white p-10 flex flex-col gap-10 relative overflow-hidden'>
+      <div id='skills' className='w-full min-h-screen  text-white mt-20 p-10 flex flex-col gap-10 relative overflow-hidden'>
         
         
         {/* Floating Elements */}
