@@ -215,9 +215,6 @@ const AboutMe = () => {
         </div>
       </div>
 
-      {/* <style jsx>{`
-        
-      `}</style> */}
     </section>
   )
 }

@@ -66,7 +66,7 @@ const Services = () => {
   ];
 
   return (
-    <section id='services' className="min-h-screen  py-0 px-6 relative overflow-hidden">
+    <section id='services' className="min-h-screen pt-20 lg:pt-0 px-6 relative overflow-hidden">
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
