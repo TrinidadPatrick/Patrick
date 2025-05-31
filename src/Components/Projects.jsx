@@ -44,8 +44,8 @@ const Projects = () => {
       img: [
         'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745302069/Screenshot_2025-04-22_133759_edj8pl.png',
         'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745318088/Screenshot_2025-04-22_183330_ekd0kz.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745319907/Screenshot_2025-04-22_183641_ku29cj.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1745318157/Screenshot_2025-04-22_183547_kf78hl.png'
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1748659868/Screenshot_2025-05-31_105027_xmmyk8.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1748660022/Screenshot_2025-05-31_105326_buouxs.png'
       ],
       video: ``,
       projectLink: 'https://convo-wave.vercel.app/',
@@ -346,7 +346,7 @@ const Projects = () => {
                 <div className={`h-1 bg-gradient-to-r ${item.color}`} />
                 
                 {/* Image */}
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+                <div className="relative  aspect-video overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                   <Carousel 
                     showIndicators={false} 
                     showArrows={true}  
@@ -360,7 +360,7 @@ const Projects = () => {
                     {item.img.map((imgsrc, imgIndex) => (
                       <div key={imgIndex} className="relative group">
                         <img 
-                          className="w-full h-full object-cover" 
+                          className="w-full h-[200px] object-fit" 
                           src={imgsrc} 
                           alt={`${item.title} screenshot`}
                           loading="lazy"
