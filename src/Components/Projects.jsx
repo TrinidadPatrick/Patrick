@@ -433,12 +433,9 @@ const Projects = () => {
     <div 
       id='projects' 
       ref={sectionRef}
-      className="relative text-white px-4 pt-20 mt-10 overflow-auto"
+      className="relative text-white px-4 pt-20 mt-10 overflow-y-hidden"
     >
-      {/* Background Effects */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-pink-600/5" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" /> */}
+
       
       {/* Header */}
       <div className={`text-center mb-16 transform transition-all duration-1000 ${
@@ -457,7 +454,7 @@ const Projects = () => {
       </div>
 
       {/* Desktop Carousel */}
-      <div className="hidden py-0 md:block">
+      <div className="hidden mx-auto py-0 md:block">
         <div className={`flex items-center justify-center gap-8 transform transition-all duration-1000 delay-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>

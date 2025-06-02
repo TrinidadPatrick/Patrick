@@ -301,7 +301,7 @@ const Skills = () => {
           </nav>
 
           {/* Skill List */}
-          <div ref={containerRef} className='mx-auto w-[90%] md:w-[80%] lg:w-[50%]  grid justify-center justify-items-center grid-cols-2 semiSm:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-8 mt-3'>
+          <div ref={containerRef} className='mx-auto w-[90%] md:w-[80%] lg:w-[75%] xl:w-[50%]  grid justify-center justify-items-center grid-cols-2 semiSm:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-8 mt-3'>
             {filteredSkills.map((skill, index) => {
               const isHovered = hoveredSkill === skill.title;
               
