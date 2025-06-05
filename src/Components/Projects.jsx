@@ -37,6 +37,20 @@ const Projects = () => {
     },
     {
       id: 'item-2',
+      title: 'Trip Nest (In Progress)',
+      subtitle: 'Travel Planning Platform',
+      description: "A web application for finding travel locations based on user preferences, featuring a user-friendly interface and advanced search capabilities.",
+      techStack: ['React', 'Tailwind', 'LocationIQ'],
+      img: [
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113164/Screenshot_2025-06-05_164502_eq88k4.png'
+      ],
+      video: `https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png`,
+      projectLink: 'https://kanoah-web.vercel.app/',
+      category: 'Frontend',
+      color: 'from-blue-500 to-cyan-400'
+    },
+    {
+      id: 'item-3',
       title: 'Chat Wave',
       subtitle: 'Real-time Communication Platform',
       description: "A sophisticated chat system with real-time messaging, friendship features, and seamless user experience built for modern communication needs.",
@@ -53,7 +67,7 @@ const Projects = () => {
       color: 'from-purple-500 to-pink-400'
     },
     {
-      id: 'item-3',
+      id: 'item-4',
       title: 'Swift POS',
       subtitle: 'Point of Sale System',
       description: "A comprehensive Point of Sale system with intuitive UI, featuring daily, monthly, and annual reports with advanced expense tracking capabilities.",
@@ -70,7 +84,7 @@ const Projects = () => {
       color: 'from-green-500 to-emerald-400'
     },
     {
-      id: 'item-4',
+      id: 'item-5',
       title: 'Kanoah Mobile',
       subtitle: 'Mobile Service Platform',
       description: "A mobile-first application for searching and booking services with location-based features and integrated chat functionality for seamless user experience.",
@@ -85,7 +99,7 @@ const Projects = () => {
       color: 'from-orange-500 to-red-400'
     },
     {
-      id: 'item-5',
+      id: 'item-6',
       title: 'Advanced Calculator',
       subtitle: 'Scientific Computing Tool',
       description: "A sophisticated calculator supporting continuous equations and advanced mathematical operations with an intuitive user interface.",
@@ -96,7 +110,7 @@ const Projects = () => {
       color: 'from-indigo-500 to-purple-400'
     },
     {
-      id: 'item-6',
+      id: 'item-7',
       title: 'Crown Funding',
       subtitle: 'Crowdfunding Platform',
       description: "A modern crowdfunding platform based on Frontend Mentor challenge, featuring responsive design and interactive user elements.",
@@ -111,7 +125,7 @@ const Projects = () => {
       color: 'from-teal-500 to-green-400'
     },
     {
-      id: 'item-7',
+      id: 'item-8',
       title: 'Multi Step Form',
       subtitle: 'Interactive Form Builder',
       description: "A sophisticated multi-step form with plan selection and addon features, showcasing advanced form handling and state management.",
@@ -128,7 +142,7 @@ const Projects = () => {
       color: 'from-rose-500 to-orange-400'
     },
     {
-      id: 'item-8',
+      id: 'item-9',
       title: 'Password Generator',
       subtitle: 'Security Tool',
       description: "A robust password generator with customizable options and security features, built as a Frontend Mentor challenge solution.",
@@ -139,7 +153,7 @@ const Projects = () => {
       color: 'from-yellow-500 to-orange-400'
     },
     {
-      id: 'item-9',
+      id: 'item-10',
       title: 'Authify',
       subtitle: 'Authentication System',
       description: "A comprehensive authentication system featuring OAuth integration, password recovery, and advanced security measures for modern applications.",
@@ -150,7 +164,7 @@ const Projects = () => {
       color: 'from-violet-500 to-purple-400'
     },
     {
-      id: 'item-10',
+      id: 'item-11',
       title: 'AniHive',
       subtitle: 'Anime Discovery Platform',
       description: "A modern anime browsing platform integrated with Jikan API, featuring advanced search, filtering, and discovery capabilities.",
@@ -247,7 +261,7 @@ const Projects = () => {
                     <div key={index} className="relative group/image flex ">
                       <div className='h-full w-full '>
                       <img 
-                        className="w-full h-[25rem] semiMd:h-[220px] object-cover  transition-transform duration-700 " 
+                        className="w-full h-[25rem] semiMd:h-[220px] object-fit transition-transform duration-700 " 
                         src={imgsrc} 
                         alt={`${item.title} screenshot ${index + 1}`}
                         loading="lazy"
