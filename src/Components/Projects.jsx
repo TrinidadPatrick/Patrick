@@ -44,8 +44,8 @@ const Projects = () => {
       img: [
         'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113164/Screenshot_2025-06-05_164502_eq88k4.png'
       ],
-      video: `https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png`,
-      projectLink: 'https://kanoah-web.vercel.app/',
+      // video: `https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png`,
+      // projectLink: 'https://kanoah-web.vercel.app/',
       category: 'Frontend',
       color: 'from-blue-500 to-cyan-400'
     },
