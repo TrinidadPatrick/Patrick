@@ -19,6 +19,7 @@ export default {
       ,
       screens : {
         extraSm : '400px',
+        semiextraSm: '450px',
         semiMd : '950px',
         semiSm : '500px'
       },

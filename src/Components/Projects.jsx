@@ -15,6 +15,24 @@ const Projects = () => {
   
   const mockItems = [
     {
+      id: 'item-11',
+      title: 'AniHive',
+      subtitle: 'Anime Discovery Platform',
+      description: "A modern anime browsing platform integrated with Jikan API, featuring advanced search, filtering, and discovery capabilities.",
+      techStack: ['React.js', 'Tailwind', 'Jikan API'],
+      img: [
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747472979/Beige_Soft_Mockup_Launching_New_Website_Facebook_Post_2_gkhqsi.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473224/Screenshot_2025-05-17_171331_strmju.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473564/Screenshot_2025-05-17_171910_mkw50n.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473736/Screenshot_2025-05-17_172038_avgqur.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473737/Screenshot_2025-05-17_172047_pdjiqc.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473738/Screenshot_2025-05-17_172156_cmjnlb.png'
+      ],
+      projectLink: 'https://ani-hive-ilrc.vercel.app/',
+      category: 'Frontend',
+      color: 'from-pink-500 to-rose-400'
+    },
+    {
       id: 'item-1',
       title: 'Kanoah',
       subtitle: 'Web-Based Service Finder',
@@ -42,7 +60,7 @@ const Projects = () => {
       description: "A web application for finding travel locations based on user preferences, featuring a user-friendly interface and advanced search capabilities.",
       techStack: ['React', 'Tailwind', 'LocationIQ'],
       img: [
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113164/Screenshot_2025-06-05_164502_eq88k4.png'
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png'
       ],
       // video: `https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png`,
       // projectLink: 'https://kanoah-web.vercel.app/',
@@ -162,24 +180,6 @@ const Projects = () => {
       projectLink: 'https://authify-three.vercel.app/',
       category: 'Full Stack',
       color: 'from-violet-500 to-purple-400'
-    },
-    {
-      id: 'item-11',
-      title: 'AniHive',
-      subtitle: 'Anime Discovery Platform',
-      description: "A modern anime browsing platform integrated with Jikan API, featuring advanced search, filtering, and discovery capabilities.",
-      techStack: ['React.js', 'Tailwind', 'Jikan API'],
-      img: [
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747472979/Beige_Soft_Mockup_Launching_New_Website_Facebook_Post_2_gkhqsi.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473224/Screenshot_2025-05-17_171331_strmju.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473564/Screenshot_2025-05-17_171910_mkw50n.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473736/Screenshot_2025-05-17_172038_avgqur.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473737/Screenshot_2025-05-17_172047_pdjiqc.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473738/Screenshot_2025-05-17_172156_cmjnlb.png'
-      ],
-      projectLink: 'https://ani-hive-ilrc.vercel.app/',
-      category: 'Frontend',
-      color: 'from-pink-500 to-rose-400'
     }
   ]
 
@@ -208,27 +208,38 @@ const Projects = () => {
     setVideoDirectory(dir)
   }
 
-  const {
-    carouselFragment,
-    useListenToCustomEvent,
-    slideToPrevItem,
-    slideToNextItem,
-  } = useSpringCarousel({
-    itemsPerSlide: size.width <= 960 ? 1 : size.width <= 1200 ? 2 : 3,
-    withLoop: true,
-    initialStartingPosition: size.width >= 1200 && 'center',
-    gutter: 22,
-    items: mockItems.map((item) => {
-      return {
-        ...item,
-        renderItem: (
-          <div 
+  return (
+    <div 
+      id='projects' 
+      ref={sectionRef}
+      className="relative text-white px-4 pt-20 mt-10 overflow-y-hidden"
+    >
+
+      
+      {/* Header */}
+      <div className={`text-center mb-16 transform transition-all duration-1000 ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+      }`}>
+        <div className="inline-block relative">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent">
+            My Projects
+          </h1>
+          <div className="h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full transform scale-x-0 animate-[scaleX_1s_ease-out_0.5s_forwards]" />
+        </div>
+        <div className="w-24 mt-5 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
+        {/* <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
+          Crafting digital experiences with passion, precision, and cutting-edge technology
+        </p> */}
+      </div>
+
+      {/* Project List */}
+      <div className='semiSm:w-[75%] sm:w-[70%] md:w-[90%] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10'>
+        {
+          mockItems.map((item, index) => {
+              return (
+                <div key={index}
             className={`relative group transition-all h-full  duration-700 ease-out transform 
-            ${
-              currentSlide === item.id && size.width >= 1200
-                ? 'z-20 scale-100 lg:scale-110' 
-                : 'scale-90 opacity-60'
-            }
+            
             `}
             onMouseEnter={() => setHoveredProject(item.id)}
             onMouseLeave={() => setHoveredProject(null)}
@@ -241,12 +252,10 @@ const Projects = () => {
             {/* Card */}
             <div className="relative h-full bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
               {/* Top Accent Line */}
-              <div className={`${hoveredProject === item.id ? 'h-1' : 'h-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 ${
-                hoveredProject === item.id ? 'scale-x-100' : 'scale-x-0'
-              }`} />
+              <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
               {/* Image Container */}
-              <div className="relative w-full overflow-hidden ">
+              <div className="relative bg-black w-full overflow-hidden ">
                 <Carousel 
                   showIndicators={false} 
                   showThumbs={false} 
@@ -258,15 +267,8 @@ const Projects = () => {
                   className="h-full"
                 >
                   {item.img.map((imgsrc, index) => (
-                    <div key={index} className="relative group/image flex ">
-                      <div className='h-full w-full '>
-                      <img 
-                        className="w-full h-[25rem] semiMd:h-[220px] object-fit transition-transform duration-700 " 
-                        src={imgsrc} 
-                        alt={`${item.title} screenshot ${index + 1}`}
-                        loading="lazy"
-                      />
-                      </div>
+                    <div key={index} className="relative group/image flex bg-black ">
+                      <div style={{backgroundImage: `url(${imgsrc})`}} className='w-full aspect-video bg-black bg-cover bg-center' />
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
@@ -330,189 +332,11 @@ const Projects = () => {
               </div>
             </div>
           </div>
-        )
-      }
-    }),
-  })
+              )
+          })
+        }
 
-  useListenToCustomEvent((event) => {
-    if (event.eventName === 'onSlideStartChange') {
-      setCurrentSlide(event?.nextItem?.id)
-    }
-  })
-
-  const MobileCarousel = () => {
-    return (
-      <div className="flex md:hidden mx-auto w-full max-w-sm mt-10">
-        <Carousel 
-          infiniteLoop 
-          showArrows={false} 
-          swipeable={true}
-          showIndicators={true} 
-          showStatus={false} 
-          showThumbs={false} 
-          className="w-full"
-        >
-          {mockItems?.map((item, index) => (
-            <div key={index} className="pb-16">
-              <div className="relative mx-4 bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-xl border border-gray-700/50 rounded-2xl overflow-hidden shadow-xl">
-                {/* Top Accent */}
-                <div className={`h-1 bg-gradient-to-r ${item.color}`} />
-                
-                {/* Image */}
-                <div className="relative  aspect-video overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
-                  <Carousel 
-                    showIndicators={false} 
-                    showArrows={true}  
-                    swipeable={false} 
-                    showThumbs={false} 
-                    showStatus={false} 
-                    autoPlay={false}  
-                    infiniteLoop 
-                    interval={5000}
-                  >
-                    {item.img.map((imgsrc, imgIndex) => (
-                      <div key={imgIndex} className="relative group">
-                        <img 
-                          className="w-full h-[200px] object-fit" 
-                          src={imgsrc} 
-                          alt={`${item.title} screenshot`}
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                        
-                        {/* Action Buttons */}
-                        <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {item.video && (
-                            <button 
-                              onClick={() => viewVideo(item.video)}
-                              className="px-3 py-2 bg-blue-600 text-white text-xs font-semibold rounded-lg"
-                            >
-                              ▶ Demo
-                            </button>
-                          )}
-                          {item.projectLink && (
-                            <button 
-                              onClick={() => window.open(item.projectLink, '_blank')}
-                              className="px-3 py-2 bg-emerald-600 text-white text-xs font-semibold rounded-lg"
-                            >
-                              View ↗
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </Carousel>
-                </div>
-
-                {/* Content */}
-                <div className="p-4 space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className={`px-2 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${item.color} text-white`}>
-                      {item.category}
-                    </span>
-                  </div>
-                  
-                  <div>
-                    <h3 className="text-lg font-bold text-white text-left">{item.title}</h3>
-                    <p className={`text-sm font-medium bg-gradient-to-r ${item.color} bg-clip-text text-transparent text-left`}>
-                      {item.subtitle}
-                    </p>
-                  </div>
-                  
-                  <p className="text-gray-300 text-sm leading-relaxed text-left">
-                    {item.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {item.techStack.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className="px-2 py-1 text-xs font-medium bg-gray-800/60 text-gray-300 border border-gray-600/50 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Carousel>
       </div>
-    )
-  }
-
-  return (
-    <div 
-      id='projects' 
-      ref={sectionRef}
-      className="relative text-white px-4 pt-20 mt-10 overflow-y-hidden"
-    >
-
-      
-      {/* Header */}
-      <div className={`text-center mb-16 transform transition-all duration-1000 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>
-        <div className="inline-block relative">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent">
-            My Projects
-          </h1>
-          <div className="h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full transform scale-x-0 animate-[scaleX_1s_ease-out_0.5s_forwards]" />
-        </div>
-        <div className="w-24 mt-5 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
-        {/* <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
-          Crafting digital experiences with passion, precision, and cutting-edge technology
-        </p> */}
-      </div>
-
-      {/* Desktop Carousel */}
-      <div className="hidden mx-auto py-0 md:block">
-        <div className={`flex items-center justify-center gap-8 transform transition-all duration-1000 delay-300 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}>
-          {/* Navigation Buttons */}
-          <button 
-            onClick={slideToPrevItem}
-            className="group p-4 bg-gradient-to-r from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-gray-600/50 rounded-full hover:from-blue-600/20 hover:to-purple-600/20 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-110"
-          >
-            <svg 
-              className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-300" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          {/* Carousel Container */}
-          <div 
-            style={{ width: `${Math.min(size.width - 0, 1300)}px` }} 
-            className="overflow-hidden pb-20 pt-14"
-          >
-            {carouselFragment}
-          </div>
-
-          <button 
-            onClick={slideToNextItem}
-            className="group p-4 bg-gradient-to-r from-gray-800/80 to-gray-700/80 backdrop-blur-xl border border-gray-600/50 rounded-full hover:from-blue-600/20 hover:to-purple-600/20 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-110"
-          >
-            <svg 
-              className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-300" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Carousel */}
-      <MobileCarousel />
 
       {/* Video Modal */}
       <Modal 

@@ -98,6 +98,54 @@ const Skills = () => {
 
   const skills = [
     {
+      icon : (<span className="icon-[devicon--react]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'ReactJS',
+      category : 'FE',
+      level: 92
+      },
+      {
+      icon : (<span className="icon-[tabler--brand-react-native]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'React Native',
+      category : 'FE',
+      level: 80
+    },
+    {
+      icon : (<span className="icon-[devicon--nextjs]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'NextJS',
+      category : 'FE',
+      level: 70
+    },
+    {
+      icon : (<span className="icon-[skill-icons--laravel-light]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'Laravel',
+      category : 'BE',
+      level: 55
+    },
+    {
+      icon : (<span className="icon-[logos--javascript]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'JavaScript',
+      category : 'FE',
+      level: 88
+      },
+      {
+        icon : (<span className="icon-[devicon--csharp]"  style={{width: "4em", height: "4em"}}></span>),
+        title : 'C#',
+        category : 'BE',
+        level: 60
+      },
+      {
+        icon : (<span className="icon-[skill-icons--php-dark]"  style={{width: "4em", height: "4em"}}></span>),
+        title : 'PHP',
+        category : 'BE',
+        level: 60
+        },
+      {
+      icon : (<span className="icon-[logos--typescript-icon]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'TypeScript',
+      category : 'FE',
+      level: 75
+    },
+    {
     icon : (<span className="icon-[devicon--html5]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'HTML',
     category : 'FE',
@@ -110,36 +158,6 @@ const Skills = () => {
     level: 90
     },
     {
-    icon : (<span className="icon-[logos--javascript]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'JavaScript',
-    category : 'FE',
-    level: 88
-    },
-    {
-    icon : (<span className="icon-[logos--typescript-icon]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'TypeScript',
-    category : 'FE',
-    level: 85
-    },
-    {
-    icon : (<span className="icon-[devicon--react]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'ReactJS',
-    category : 'FE',
-    level: 92
-    },
-    {
-    icon : (<span className="icon-[tabler--brand-react-native]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'React Native',
-    category : 'FE',
-    level: 80
-    },
-    {
-    icon : (<span className="icon-[devicon--nextjs]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'NextJS',
-    category : 'FE',
-    level: 87
-    },
-    {
     icon : (<span className="icon-[devicon--tailwindcss]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'Tailwind CSS',
     category : 'FE',
@@ -149,7 +167,7 @@ const Skills = () => {
     icon : (<span className="icon-[skill-icons--bootstrap]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'Bootstrap',
     category : 'FE',
-    level: 85
+    level: 70
     },
     {
     icon : (<span className="icon-[logos--nodejs-icon]"  style={{width: "4em", height: "4em"}}></span>),
@@ -158,28 +176,10 @@ const Skills = () => {
     level: 88
     },
     {
-      icon : (<span className="icon-[devicon--csharp]"  style={{width: "4em", height: "4em"}}></span>),
-      title : 'C#',
-      category : 'BE',
-      level: 82
-    },
-    {
     icon : (<span className="icon-[skill-icons--expressjs-light]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'EXPRESS JS',
     category : 'BE',
     level: 85
-    },
-    {
-    icon : (<span className="icon-[skill-icons--php-dark]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'PHP',
-    category : 'BE',
-    level: 78
-    },
-    {
-    icon : (<span className="icon-[skill-icons--laravel-light]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'Laravel',
-    category : 'BE',
-    level: 80
     },
     {
     icon : (<span className="icon-[skill-icons--mongodb]"  style={{width: "4em", height: "4em"}}></span>),
@@ -209,7 +209,7 @@ const Skills = () => {
     icon : (<span className="icon-[bi--github]"  style={{width: "4em", height: "4em"}}></span>),
     title : 'GitHub',
     category : 'OTHERS',
-    level: 92
+    level: 70
     },
   ]
 
