@@ -62,13 +62,30 @@ const Projects = () => {
       img: [
         'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png'
       ],
-      // video: `https://res.cloudinary.com/dnbgrdgpn/image/upload/v1749113417/Screenshot_2025-06-05_165003_lq11e1.png`,
-      // projectLink: 'https://kanoah-web.vercel.app/',
       category: 'Frontend',
-      color: 'from-blue-500 to-cyan-400'
+      color: 'from-blue-500 to-gray-400'
     },
     {
       id: 'item-3',
+      title: 'Music Go',
+      subtitle: 'Music Platform',
+      description: "A web application for exploring and vibing with musics, with different features such as playlist, library and more.",
+      techStack: ['React', 'Tailwind', 'Python', 'Shadcn', 'MySQL'],
+      img: [
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751584515/Screenshot_2025-07-04_071455_nyzmjx.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751584577/Screenshot_2025-07-04_071555_j4xqvx.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590298/Screenshot_2025-07-04_085115_fv95wc.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590362/Screenshot_2025-07-04_085231_rnad6c.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590399/Screenshot_2025-07-04_085310_b0bzg0.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590495/Screenshot_2025-07-04_085444_fztcph.png',
+        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590454/Screenshot_2025-07-04_085402_ykmvna.png'
+      ],
+      projectLink: 'https://music-go.vercel.app/',
+      category: 'Full Stack',
+      color: 'from-blue-500 to-pink-400'
+    },
+    {
+      id: 'item-4',
       title: 'Chat Wave',
       subtitle: 'Real-time Communication Platform',
       description: "A sophisticated chat system with real-time messaging, friendship features, and seamless user experience built for modern communication needs.",
@@ -85,7 +102,7 @@ const Projects = () => {
       color: 'from-purple-500 to-pink-400'
     },
     {
-      id: 'item-4',
+      id: 'item-5',
       title: 'Swift POS',
       subtitle: 'Point of Sale System',
       description: "A comprehensive Point of Sale system with intuitive UI, featuring daily, monthly, and annual reports with advanced expense tracking capabilities.",
@@ -102,7 +119,7 @@ const Projects = () => {
       color: 'from-green-500 to-emerald-400'
     },
     {
-      id: 'item-5',
+      id: 'item-6',
       title: 'Kanoah Mobile',
       subtitle: 'Mobile Service Platform',
       description: "A mobile-first application for searching and booking services with location-based features and integrated chat functionality for seamless user experience.",
@@ -117,7 +134,7 @@ const Projects = () => {
       color: 'from-orange-500 to-red-400'
     },
     {
-      id: 'item-6',
+      id: 'item-7',
       title: 'Advanced Calculator',
       subtitle: 'Scientific Computing Tool',
       description: "A sophisticated calculator supporting continuous equations and advanced mathematical operations with an intuitive user interface.",
@@ -128,7 +145,7 @@ const Projects = () => {
       color: 'from-indigo-500 to-purple-400'
     },
     {
-      id: 'item-7',
+      id: 'item-8',
       title: 'Crown Funding',
       subtitle: 'Crowdfunding Platform',
       description: "A modern crowdfunding platform based on Frontend Mentor challenge, featuring responsive design and interactive user elements.",
@@ -143,7 +160,7 @@ const Projects = () => {
       color: 'from-teal-500 to-green-400'
     },
     {
-      id: 'item-8',
+      id: 'item-9',
       title: 'Multi Step Form',
       subtitle: 'Interactive Form Builder',
       description: "A sophisticated multi-step form with plan selection and addon features, showcasing advanced form handling and state management.",
@@ -160,7 +177,7 @@ const Projects = () => {
       color: 'from-rose-500 to-orange-400'
     },
     {
-      id: 'item-9',
+      id: 'item-10',
       title: 'Password Generator',
       subtitle: 'Security Tool',
       description: "A robust password generator with customizable options and security features, built as a Frontend Mentor challenge solution.",
@@ -171,7 +188,7 @@ const Projects = () => {
       color: 'from-yellow-500 to-orange-400'
     },
     {
-      id: 'item-10',
+      id: 'item-11',
       title: 'Authify',
       subtitle: 'Authentication System',
       description: "A comprehensive authentication system featuring OAuth integration, password recovery, and advanced security measures for modern applications.",
@@ -212,7 +229,7 @@ const Projects = () => {
     <div 
       id='projects' 
       ref={sectionRef}
-      className="relative text-white px-4 pt-20 mt-10 overflow-y-hidden"
+      className="relative px-4 pt-20 mt-10 overflow-y-hidden text-white"
     >
 
       
@@ -220,14 +237,14 @@ const Projects = () => {
       <div className={`text-center mb-16 transform transition-all duration-1000 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-        <div className="inline-block relative">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent">
+        <div className="relative inline-block">
+          <h1 className="text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text">
             My Projects
           </h1>
           <div className="h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full transform scale-x-0 animate-[scaleX_1s_ease-out_0.5s_forwards]" />
         </div>
-        <div className="w-24 mt-5 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
-        {/* <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
+        <div className="w-24 h-1 mx-auto mt-5 rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div>
+        {/* <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-400">
           Crafting digital experiences with passion, precision, and cutting-edge technology
         </p> */}
       </div>
@@ -250,12 +267,12 @@ const Projects = () => {
             }`} />
             
             {/* Card */}
-            <div className="relative h-full bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
+            <div className="relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
               {/* Top Accent Line */}
               <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
               {/* Image Container */}
-              <div className="relative bg-black w-full overflow-hidden ">
+              <div className="relative w-full overflow-hidden bg-black ">
                 <Carousel 
                   showIndicators={false} 
                   showThumbs={false} 
@@ -267,17 +284,17 @@ const Projects = () => {
                   className="h-full"
                 >
                   {item.img.map((imgsrc, index) => (
-                    <div key={index} className="relative group/image flex bg-black ">
-                      <div style={{backgroundImage: `url(${imgsrc})`}} className='w-full aspect-video bg-black bg-cover bg-center' />
+                    <div key={index} className="relative flex bg-black group/image ">
+                      <div style={{backgroundImage: `url(${imgsrc})`}} className='w-full bg-black bg-center bg-cover aspect-video' />
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100" />
                       
                       {/* Action Buttons */}
-                      <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      <div className="absolute inset-0 flex items-center justify-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
                         {item.video && (
                           <button 
                             onClick={() => viewVideo(item.video)}
-                            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105"
                           >
                             ▶ Demo
                           </button>
@@ -285,7 +302,7 @@ const Projects = () => {
                         {item.projectLink && (
                           <button 
                             onClick={() => window.open(item.projectLink, '_blank')}
-                            className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-sm font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 hover:scale-105"
                           >
                             View Project ↗
                           </button>
@@ -307,14 +324,14 @@ const Projects = () => {
 
                 {/* Title & Subtitle */}
                 <div>
-                  <h3 className="text-2xl lg:text-xl font-bold text-white mb-1">{item.title}</h3>
+                  <h3 className="mb-1 text-2xl font-bold text-white lg:text-xl">{item.title}</h3>
                   <p className={`text-base lg:text-sm font-medium bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                     {item.subtitle}
                   </p>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 text-lg lg:text-sm leading-relaxed line-clamp-3">
+                <p className="text-lg leading-relaxed text-gray-300 lg:text-sm line-clamp-3">
                   {item.description}
                 </p>
 
@@ -323,7 +340,7 @@ const Projects = () => {
                   {item.techStack.map((tech, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1 text-xs font-medium bg-gray-800/60 text-gray-300 border border-gray-600/50 rounded-full hover:bg-gray-700/60 hover:border-gray-500/50 transition-colors duration-200"
+                      className="px-3 py-1 text-xs font-medium text-gray-300 transition-colors duration-200 border rounded-full bg-gray-800/60 border-gray-600/50 hover:bg-gray-700/60 hover:border-gray-500/50"
                     >
                       {tech}
                     </span>
@@ -344,10 +361,10 @@ const Projects = () => {
         onClose={() => setOpenVideoPlayer(false)}
         className="flex items-center justify-center p-4"
       >
-        <div className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative w-full max-w-4xl overflow-hidden bg-black shadow-2xl rounded-2xl">
           <button 
             onClick={() => setOpenVideoPlayer(false)}
-            className="absolute top-4 right-4 z-50 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors duration-200"
+            className="absolute z-50 p-2 text-white transition-colors duration-200 rounded-full top-4 right-4 bg-black/50 hover:bg-black/70"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

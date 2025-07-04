@@ -23,11 +23,11 @@ const Introduction = () => {
     }
 
     const FloatingParticles = () => (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-emerald-400/30 rounded-full animate-pulse"
+              className="absolute w-1 h-1 rounded-full bg-emerald-400/30 animate-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -42,11 +42,11 @@ const Introduction = () => {
     
 
   return (
-    <div id='home' className="pt-24 lg:px-20 xl:px-0  text-white overflow-hidden">
+    <div id='home' className="overflow-hidden text-white  lg:px-20 xl:px-0">
       <FloatingParticles />
 
       {/* Social Links */}
-      <div className="fixed left-6 top-1/2 transform -translate-y-1/2 z-30 hidden lg:flex flex-col space-y-4">
+      <div className="fixed z-30 flex-col hidden space-y-4 transform -translate-y-1/2 left-6 top-1/2 lg:flex">
         {[
           { Icon: Facebook, href: 'https://www.facebook.com/patrick.trinidad.5872/', color: 'hover:text-blue-400' },
           { Icon: Github, href: 'https://github.com/TrinidadPatrick', color: 'hover:text-gray-400' },
@@ -57,33 +57,33 @@ const Introduction = () => {
             href={href}
             className={`w-12 h-12 bg-slate-800/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl flex items-center justify-center text-slate-400 ${color} transition-all duration-300 hover:scale-110 hover:bg-slate-700/50 group`}
           >
-            <Icon size={20} className="group-hover:scale-110 transition-transform duration-200" />
+            <Icon size={20} className="transition-transform duration-200 group-hover:scale-110" />
           </a>
         ))}
       </div>
 
       {/* Hero Section */}
       <main className="relative pt-16 ">
-        <section className="py-24 flex items-center px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="flex items-center px-4 py-24 sm:px-6 lg:px-8">
+          <div className="w-full mx-auto max-w-7xl">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
               
               {/* Left Content */}
               <div className="space-y-8 animate-fade-in-left">
                 <div>
-                  <p className="text-center sm:text-start text-emerald-400 text-lg font-medium mb-4 animate-bounce-subtle">
+                  <p className="mb-4 text-lg font-medium text-center sm:text-start text-emerald-400 animate-bounce-subtle">
                     Hi, I'm John Patrick Trinidad
                   </p>
-                  <h1 className="text-center sm:text-start text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-emerald-400 to-teal-400 bg-clip-text text-transparent leading-tight">
+                  <h1 className="mb-6 text-4xl font-bold leading-tight text-center text-transparent sm:text-start lg:text-6xl bg-gradient-to-r from-white via-emerald-400 to-teal-400 bg-clip-text">
                     WEB DEVELOPER
                   </h1>
-                  <p className="text-xl text-center sm:text-start text-slate-400 leading-relaxed mb-8 max-w-lg">
+                  <p className="max-w-lg mb-8 text-xl leading-relaxed text-center sm:text-start text-slate-400">
                     Crafting digital experiences with clean code and creative design. 
                     Specialized in modern web technologies and user-centric solutions.
                   </p>
                 </div>
 
-                <div className="flex flex-col items-center w-full sm:items-start sm:flex-row justify-center sm:justify-start flex-wrap gap-4">
+                <div className="flex flex-col flex-wrap items-center justify-center w-full gap-4 sm:items-start sm:flex-row sm:justify-start">
                   <button onClick={()=>sendEmail()} className="group w-[11rem] bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 px-4 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25 flex items-center justify-center space-x-2">
                     <Mail size={20} />
                     <span className=' whitespace-nowrap'>Contact me</span>
@@ -96,7 +96,7 @@ const Introduction = () => {
                 </div>
 
                 {/* Social Links */}
-                <div className=" z-30 flex w-full justify-center sm:justify-start lg:hidden gap-4">
+                <div className="z-30 flex justify-center w-full gap-4 sm:justify-start lg:hidden">
                 {[
                   { Icon: Facebook, href: 'https://www.facebook.com/patrick.trinidad.5872/', color: 'hover:text-blue-400' },
                   { Icon: Github, href: 'https://github.com/TrinidadPatrick', color: 'hover:text-gray-400' },
@@ -107,7 +107,7 @@ const Introduction = () => {
                     href={href}
                     className={`w-12 h-12 bg-slate-800/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl flex items-center justify-center text-slate-400 ${color} transition-all duration-300 hover:scale-110 hover:bg-slate-700/50 group`}
                   >
-                    <Icon size={20} className="group-hover:scale-110 transition-transform duration-200" />
+                    <Icon size={20} className="transition-transform duration-200 group-hover:scale-110" />
                   </a>
                 ))}
                 </div>
@@ -115,11 +115,11 @@ const Introduction = () => {
                 <div className='border-t border-slate-700/50 sm:hidden'/>
 
                 {/* Skills Preview */}
-                <div className="flex justify-center sm:justify-start flex-wrap gap-3 lg:pt-8">
+                <div className="flex flex-wrap justify-center gap-3 sm:justify-start lg:pt-8">
                   {['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind'].map((skill, index) => (
                     <span
                       key={skill}
-                      className="px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-emerald-500/20 rounded-full text-sm text-emerald-300 hover:bg-slate-700/50 transition-all duration-300 hover:scale-105"
+                      className="px-4 py-2 text-sm transition-all duration-300 border rounded-full bg-slate-800/50 backdrop-blur-sm border-emerald-500/20 text-emerald-300 hover:bg-slate-700/50 hover:scale-105"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       {skill}
@@ -133,25 +133,25 @@ const Introduction = () => {
                 <div className="relative w-full max-w-lg mx-auto">
                   {/* Main Circle */}
                   <div className="w-[23rem] h-[23rem] mx-auto relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-transparent rounded-full backdrop-blur-sm border border-emerald-500/20 animate-pulse"></div>
+                    <div className="absolute inset-0 border rounded-full bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-transparent backdrop-blur-sm border-emerald-500/20 animate-pulse"></div>
                     
                     {/* Inner Developer Illustration */}
-                    <div className="absolute inset-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-full flex items-center justify-center border border-emerald-500/30">
-                      <div className="w-48 h-32 bg-slate-700 rounded-lg relative overflow-hidden">
+                    <div className="absolute flex items-center justify-center border rounded-full inset-8 bg-gradient-to-br from-slate-800 to-slate-900 border-emerald-500/30">
+                      <div className="relative w-48 h-32 overflow-hidden rounded-lg bg-slate-700">
                         {/* Monitor */}
-                        <div className="absolute top-2 left-2 right-2 bottom-2 bg-slate-900 rounded">
+                        <div className="absolute rounded top-2 left-2 right-2 bottom-2 bg-slate-900">
                           {/* Window controls */}
-                          <div className="flex space-x-1 p-2">
+                          <div className="flex p-2 space-x-1">
                             <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                             <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                            <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
                           </div>
                           {/* Code lines */}
-                          <div className="space-y-1 p-2">
-                            <div className="h-1 bg-emerald-400 w-3/4 rounded animate-pulse"></div>
-                            <div className="h-1 bg-slate-500 w-1/2 rounded"></div>
-                            <div className="h-1 bg-slate-500 w-2/3 rounded"></div>
-                            <div className="h-1 bg-emerald-400 w-1/3 rounded animate-pulse delay-75"></div>
+                          <div className="p-2 space-y-1">
+                            <div className="w-3/4 h-1 rounded bg-emerald-400 animate-pulse"></div>
+                            <div className="w-1/2 h-1 rounded bg-slate-500"></div>
+                            <div className="w-2/3 h-1 rounded bg-slate-500"></div>
+                            <div className="w-1/3 h-1 delay-75 rounded bg-emerald-400 animate-pulse"></div>
                           </div>
                         </div>
                       </div>
