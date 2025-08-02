@@ -115,30 +115,36 @@ const Skills = () => {
       category : 'FE',
       level: 70
     },
-    {
-      icon : (<span className="icon-[skill-icons--laravel-light]"  style={{width: "4em", height: "4em"}}></span>),
-      title : 'Laravel',
-      category : 'BE',
-      level: 55
-    },
+    // {
+    //   icon : (<span className="icon-[skill-icons--laravel-light]"  style={{width: "4em", height: "4em"}}></span>),
+    //   title : 'Laravel',
+    //   category : 'BE',
+    //   level: 55
+    // },
     {
       icon : (<span className="icon-[logos--javascript]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'JavaScript',
       category : 'FE',
       level: 88
       },
-      {
-        icon : (<span className="icon-[devicon--csharp]"  style={{width: "4em", height: "4em"}}></span>),
-        title : 'C#',
-        category : 'BE',
-        level: 60
+    {
+      icon : (<span className="icon-[logos--python]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'Python',
+      category : 'BE',
+      level: 60
       },
-      {
-        icon : (<span className="icon-[skill-icons--php-dark]"  style={{width: "4em", height: "4em"}}></span>),
-        title : 'PHP',
-        category : 'BE',
-        level: 60
-        },
+      // {
+      //   icon : (<span className="icon-[devicon--csharp]"  style={{width: "4em", height: "4em"}}></span>),
+      //   title : 'C#',
+      //   category : 'BE',
+      //   level: 60
+      // },
+      // {
+      //   icon : (<span className="icon-[skill-icons--php-dark]"  style={{width: "4em", height: "4em"}}></span>),
+      //   title : 'PHP',
+      //   category : 'BE',
+      //   level: 60
+      //   },
       {
       icon : (<span className="icon-[logos--typescript-icon]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'TypeScript',
@@ -251,27 +257,27 @@ const Skills = () => {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: customStyles }} />
-      <div id='skills' className='w-full pt-24  text-white mt-20 p-10 flex flex-col gap-10 relative overflow-hidden'>
+      <div id='skills' className='relative flex flex-col w-full gap-10 p-10 pt-24 mt-20 overflow-hidden text-white'>
         
         
         {/* Floating Elements */}
-        <div className="absolute top-32 right-20 w-20 h-20 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-32 left-20 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute w-20 h-20 rounded-full top-32 right-20 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-xl animate-pulse"></div>
+        <div className="absolute w-32 h-32 rounded-full bottom-32 left-20 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl animate-pulse"></div>
 
         <div className="relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-6">
+          <div className="mb-16 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full bg-white/5 backdrop-blur-sm border-white/10">
               <Zap className="w-4 h-4 text-green-400" />
-              <span className="text-sm text-gray-300 font-medium">Technical Expertise</span>
+              <span className="text-sm font-medium text-gray-300">Technical Expertise</span>
             </div>
             
-            <h1 className='text-4xl xl:text-6xl text-center font-bold mb-6'>
-              <span className="bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent">
+            <h1 className='mb-6 text-4xl font-bold text-center xl:text-6xl'>
+              <span className="text-transparent bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text">
                 My Skills
               </span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div>
           </div>
 
           {/* Navigation */}
@@ -291,7 +297,7 @@ const Skills = () => {
                   }`}
                 >
                   <IconComponent className={`w-4 h-4 ${isActive ? 'text-white' : 'text-gray-400'}`} />
-                  <span className="font-medium text-xs md:text-base whitespace-nowrap">{category.name}</span>
+                  <span className="text-xs font-medium md:text-base whitespace-nowrap">{category.name}</span>
                   {isActive && (
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   )}
@@ -308,7 +314,7 @@ const Skills = () => {
               return (
                 <Zoom key={`${skill.title}-${selectedOption}`} in={visible} timeout={500} style={{ transitionDelay: `${index * 50}ms` }}>
                   <div 
-                    className='skill-card skillBox rounded-2xl p-6 bg-themeBlue w-32 aspect-square justify-between flex flex-col items-center relative group'
+                    className='relative flex flex-col items-center justify-between w-32 p-6 skill-card skillBox rounded-2xl bg-themeBlue aspect-square group'
                     onMouseEnter={() => setHoveredSkill(skill.title)}
                     onMouseLeave={() => setHoveredSkill(null)}
                   >
@@ -318,15 +324,15 @@ const Skills = () => {
                     </div>
                     
                     {/* Skill Title */}
-                    <p className="text-white whitespace-nowrap font-semibold text-center group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text transition-all duration-300">
+                    <p className="font-semibold text-center text-white transition-all duration-300 whitespace-nowrap group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text">
                       {skill.title}
                     </p>
                     
                     {/* Skill Level Progress Bar */}
                     <div className="absolute bottom-0 left-2 right-2">
-                      <div className="w-full h-1 bg-gray-700 rounded-full overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-full h-1 overflow-hidden transition-opacity duration-300 bg-gray-700 rounded-full opacity-0 group-hover:opacity-100">
                         <div 
-                          className="h-full bg-gradient-to-r from-green-400 to-emerald-500 rounded-full transition-all duration-1000 ease-out"
+                          className="h-full transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
                           style={{ 
                             width: isHovered ? `${skill.level}%` : '0%',
                             transitionDelay: isHovered ? `${index * 0.05}s` : '0s'
@@ -343,8 +349,8 @@ const Skills = () => {
                     </div>
                     
                     {/* Category Badge */}
-                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-xs px-2 py-1 bg-black/50 text-gray-300 rounded-full">
+                    <div className="absolute transition-opacity duration-300 opacity-0 top-2 right-2 group-hover:opacity-100">
+                      <span className="px-2 py-1 text-xs text-gray-300 rounded-full bg-black/50">
                         {categoryConfig.find(cat => cat.key === skill.category)?.name}
                       </span>
                     </div>
@@ -355,23 +361,23 @@ const Skills = () => {
           </div>
 
           {/* Statistics Section */}
-          {/* <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-3xl font-bold text-green-400 mb-2">
+          {/* <div className="grid max-w-4xl grid-cols-1 gap-8 mx-auto mt-16 md:grid-cols-3">
+            <div className="p-6 text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm rounded-xl border-white/10 hover:bg-white/10">
+              <div className="mb-2 text-3xl font-bold text-green-400">
                 {skills.length}+
               </div>
               <div className="text-gray-300">Technologies</div>
             </div>
             
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-3xl font-bold text-blue-400 mb-2">
+            <div className="p-6 text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm rounded-xl border-white/10 hover:bg-white/10">
+              <div className="mb-2 text-3xl font-bold text-blue-400">
                 5+
               </div>
               <div className="text-gray-300">Years Experience</div>
             </div>
             
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300">
-              <div className="text-3xl font-bold text-purple-400 mb-2">
+            <div className="p-6 text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm rounded-xl border-white/10 hover:bg-white/10">
+              <div className="mb-2 text-3xl font-bold text-purple-400">
                 50+
               </div>
               <div className="text-gray-300">Projects Completed</div>
