@@ -115,19 +115,19 @@ const Skills = () => {
       category : 'FE',
       level: 70
     },
-    // {
-    //   icon : (<span className="icon-[skill-icons--laravel-light]"  style={{width: "4em", height: "4em"}}></span>),
-    //   title : 'Laravel',
-    //   category : 'BE',
-    //   level: 55
-    // },
+    {
+      icon : (<span className="icon-[skill-icons--wordpress]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'WordPress',
+      category : 'FE',
+      level: 55
+    },
     {
       icon : (<span className="icon-[logos--javascript]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'JavaScript',
       category : 'FE',
       level: 88
       },
-    {
+      {
       icon : (<span className="icon-[logos--python]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'Python',
       category : 'BE',
