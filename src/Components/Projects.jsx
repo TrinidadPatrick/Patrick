@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import WindowSizeProvider from './WindowSizeProvider';
-import { useSpringCarousel } from 'react-spring-carousel';
 import { Box, Modal } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -11,7 +9,9 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
-  const { size } = WindowSizeProvider()
+
+  const IMAGE_BASE_URL = import.meta.env.VITE_CLOUDFRONT_IMAGE_URL
+  // console.log(Array.from({length : 8}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/music-go/image-${index + 1}.png`))
   
   const mockItems = [
     {
@@ -20,14 +20,7 @@ const Projects = () => {
       subtitle: 'Anime Discovery Platform',
       description: "A modern anime browsing platform integrated with Jikan API, featuring advanced search, filtering, and discovery capabilities.",
       techStack: ['React.js', 'Tailwind', 'Jikan API'],
-      img: [
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747472979/Beige_Soft_Mockup_Launching_New_Website_Facebook_Post_2_gkhqsi.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473224/Screenshot_2025-05-17_171331_strmju.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473564/Screenshot_2025-05-17_171910_mkw50n.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473736/Screenshot_2025-05-17_172038_avgqur.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473737/Screenshot_2025-05-17_172047_pdjiqc.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1747473738/Screenshot_2025-05-17_172156_cmjnlb.png'
-      ],
+      img: Array.from({length : 7}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/ani-hive/image-${index + 1}.png`),
       projectLink: 'https://ani-hive-ilrc.vercel.app/',
       category: 'Frontend',
       color: 'from-pink-500 to-rose-400'
@@ -38,16 +31,7 @@ const Projects = () => {
       subtitle: 'Web-Based Service Finder',
       description: "A comprehensive web application for searching and booking services based on the user's location, featuring real-time chat integration and intelligent service matching algorithms.",
       techStack: ['React', 'Tailwind', 'Node.js', 'Express.js', 'MongoDB'],
-      img: [
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1727500875/Minimalist_Website_Launch_Computer_Mockup_Instagram_Post_1000_x_750_px_1_lg1ngl.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS1_hym6xj.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328952/SS2_fs1dhc.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS3_qjdw0m.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328952/SS4_oztgjh.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS5_ww7jb8.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328954/SS9_mm9bmr.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1719328953/SS8_t484fy.png'
-      ],
+      img: Array.from({length : 10}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/kanoah/image-${index + 1}.png`),
       video: `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447721/KanoahVideoDemo_fibs2p.mp4`,
       projectLink: 'https://kanoah-web.vercel.app/',
       category: 'Full Stack',
@@ -71,15 +55,7 @@ const Projects = () => {
       subtitle: 'Music Platform',
       description: "A web application for exploring and vibing with musics, with different features such as playlist, library and more.",
       techStack: ['React', 'Tailwind', 'Python', 'Shadcn', 'MySQL'],
-      img: [
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751584515/Screenshot_2025-07-04_071455_nyzmjx.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751584577/Screenshot_2025-07-04_071555_j4xqvx.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590298/Screenshot_2025-07-04_085115_fv95wc.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590362/Screenshot_2025-07-04_085231_rnad6c.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590399/Screenshot_2025-07-04_085310_b0bzg0.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590495/Screenshot_2025-07-04_085444_fztcph.png',
-        'https://res.cloudinary.com/dnbgrdgpn/image/upload/v1751590454/Screenshot_2025-07-04_085402_ykmvna.png'
-      ],
+      img: Array.from({length : 7}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/music-go/image-${index + 1}.png`),
       projectLink: 'https://music-go.vercel.app/',
       category: 'Full Stack',
       color: 'from-blue-500 to-pink-400'
