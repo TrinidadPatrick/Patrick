@@ -61,6 +61,16 @@ const Projects = () => {
       color: 'from-blue-500 to-pink-400'
     },
     {
+      id: 'item-35',
+      title: 'Ocean Trip',
+      subtitle: 'Booking Platform',
+      description: "The System to Book Wildlife Trips is a digital platform designed to make planning and reserving wildlife adventures easier and more accessible. It allows users to browse through various destinations, view available tour packages, check pricing, and book trips directly through the system.",
+      techStack: ['WordPress', 'Elementor'],
+      img: Array.from({length : 6}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/MAR/image-${index + 1}.png`),
+      category: 'Full Stack',
+      color: 'from-blue-500 to-pink-400'
+    },
+    {
       id: 'item-4',
       title: 'Chat Wave',
       subtitle: 'Real-time Communication Platform',
