@@ -7,7 +7,7 @@ const Header = () => {
   const [navbarBg, setNavbarBg] = useState(false);
   const [activeLink, setActiveLink] = useState('home')
   const [showSideBar, setShowSideBar] = useState(false)
-  const sections = ['home', 'about', 'services', 'skills', 'projects', 'contactme'];
+  const sections = ['home', 'about', 'experience', 'services', 'skills', 'projects', 'contactme'];
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -72,6 +72,9 @@ const Header = () => {
           </Link>
           <Link to="about" smooth={true} duration={500}>
           <button onClick={()=>handleSetActive('about')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'about' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>About me</button>
+          </Link>
+          <Link to="experience" smooth={true} duration={500}>
+          <button onClick={()=>handleSetActive('experience')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'experience' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Experience</button>
           </Link>
           <Link to="services" smooth={true} duration={500} offset={-100}>
           <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>

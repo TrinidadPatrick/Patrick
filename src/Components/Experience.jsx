@@ -53,7 +53,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="min-h-screen  text-white px-6 py-16">
+    <div id="experience" className="  text-white px-6 py-16">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
