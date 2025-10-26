@@ -11,7 +11,6 @@ const Projects = () => {
   const sectionRef = useRef(null)
 
   const IMAGE_BASE_URL = import.meta.env.VITE_CLOUDFRONT_IMAGE_URL
-  // console.log(Array.from({length : 8}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/music-go/image-${index + 1}.png`))
   
   const mockItems = [
     {

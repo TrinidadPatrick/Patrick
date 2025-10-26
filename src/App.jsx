@@ -8,6 +8,7 @@ import Skills from './Components/Skills'
 import Services from './Components/Services'
 import Projects from './Components/Projects'
 import ContactMe from './Components/ContactMe';
+import Experience from './Components/Experience';
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
         </Element>
         <Element name='about'>
           <AboutMe />
+        </Element>
+        <Element name='experience'>
+          <Experience />
         </Element>
         <Element name='services'>
           <Services />
