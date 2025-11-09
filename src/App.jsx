@@ -27,7 +27,7 @@ function App() {
           <AboutMe />
         </Element>
         <Element name='experience'>
-          <Experience />
+          <Experience />    
         </Element>
         <Element name='services'>
           <Services />
