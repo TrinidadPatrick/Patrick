@@ -30,7 +30,7 @@ const Projects = () => {
       subtitle: 'Food Blog & Recipe Platform',
       description: "A food blog platform featuring curated recipes, categorized collections, and step-by-step cooking guides. Users can explore and search their favorite dishes with an intuitive, mobile-friendly interface.",
       techStack: ['WordPress', 'Elementor', 'PHP'],
-      img: Array.from({length : 7}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/crave-canva/image-${index + 1}.png`),
+      img: Array.from({length : 10}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/crave-canva/image-${index + 1}.png`),
       category: 'Full Stack',
       color: 'from-pink-500 to-rose-400'
     },
