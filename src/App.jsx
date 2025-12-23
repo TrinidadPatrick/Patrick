@@ -26,17 +26,17 @@ function App() {
         <Element name='about'>
           <AboutMe />
         </Element>
+        <Element name='projects'>
+          <Projects />
+        </Element>
+        <Element name='skills'>
+          <Skills />
+        </Element>
         <Element name='experience'>
           <Experience />    
         </Element>
         <Element name='services'>
           <Services />
-        </Element>
-        <Element name='skills'>
-          <Skills />
-        </Element>
-        <Element name='projects'>
-          <Projects />
         </Element>
         <Element name='contactme'>
           <ContactMe />

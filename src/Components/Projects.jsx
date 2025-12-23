@@ -35,6 +35,16 @@ const Projects = () => {
       color: 'from-pink-500 to-rose-400'
     },
     {
+      id: 'item-385',
+      title: 'Auto Verse',
+      subtitle: 'Car Dealership Website',
+      description: "A wordpress based car dealership system featuring dynamic vehicle listings, advanced filtering, and admin management. Customers can easily explore vehicles, book test drives, and submit price offers seamlessly.",
+      techStack: ['WordPress', 'Elementor', 'PHP'],
+      img: Array.from({length : 13}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/auto-verse/image-${index + 1}.png`),
+      category: 'Full Stack',
+      color: 'from-blue-500 to-rose-400'
+    },
+    {
       id: 'item-1',
       title: 'Kanoah',
       subtitle: 'Web-Based Service Finder',

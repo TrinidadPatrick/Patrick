@@ -26,7 +26,7 @@ const Experience = () => {
     {
       title: "Software Engineer",
       company: "Eclaro (SPINS)",
-      period: "July 2025 - Present",
+      period: "July 2025 - November 28, 2025",
       achievements: [
         {
           text: "Implemented core features",
