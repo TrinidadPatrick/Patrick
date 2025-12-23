@@ -254,7 +254,7 @@ const Projects = () => {
         </p> */}
       </div>
 
-      {/* Project List */}
+      {/* Project List */}  
       <div className='semiSm:w-[75%] sm:w-[70%] md:w-[90%] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10'>
         {
           mockItems.map((item, index) => {
@@ -266,18 +266,14 @@ const Projects = () => {
             onMouseEnter={() => setHoveredProject(item.id)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            {/* Background Glow */}
-            <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-20 rounded-3xl blur-sm transform transition-all duration-500 ${
-              hoveredProject === item.id ? 'scale-105 opacity-30' : 'scale-100'
-            }`} />
             
             {/* Card */}
-            <div className="relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
+            <div className=" relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
               {/* Top Accent Line */}
               <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
               {/* Image Container */}
-              <div className="relative w-full overflow-hidden bg-black ">
+              <div className="relative w-full overflow-hidden p-2 ">
                 <Carousel 
                   showIndicators={false} 
                   showThumbs={false} 
@@ -289,7 +285,7 @@ const Projects = () => {
                   className="h-full"
                 >
                   {item.img.map((imgsrc, index) => (
-                    <div key={index} className="relative flex bg-black group/image ">
+                    <div key={index} className="relative flex  group/image rounded-2xl overflow-hidden ">
                       <div style={{backgroundImage: `url(${imgsrc})`}} className='w-full bg-black bg-center bg-cover aspect-video' />
                       {/* Overlay */}
                       <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100" />
@@ -319,35 +315,37 @@ const Projects = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
-                {/* Category Badge */}
-                <div className="flex items-center gap-2">
-                  <span className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${item.color} text-white`}>
-                    {item.category}
-                  </span>
-                </div>
+              <div className="px-6 py-3 flex flex-col justify-between h-[250px] md:h-[220px] xl:h-[230px]">
 
                 {/* Title & Subtitle */}
+                <>
                 <div>
+                  <div className='flex items-center justify-between'>
                   <h3 className="mb-1 text-2xl font-bold text-white lg:text-xl">{item.title}</h3>
-                  <p className={`text-base lg:text-sm font-medium bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                  <span className={` text-xs font-semiboldtext-white`}>
+                    {item.category}
+                  </span>
+                  </div>
+                  <p className={`text-base lg:text-sm font-medium bg-blue-500 bg-clip-text text-transparent`}>
                     {item.subtitle}
                   </p>
+                  
                 </div>
 
                 {/* Description */}
-                <p className="text-lg leading-relaxed text-gray-300 lg:text-sm line-clamp-3">
+                <p className="text-lg leading-relaxed text-gray-300 md:text-sm lg:text-base line-clamp-3">
                   {item.description}
                 </p>
+                </>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 border-t border-gray-700 pt-5">
                   {item.techStack.map((tech, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1 text-xs font-medium text-gray-300 transition-colors duration-200 border rounded-full bg-gray-800/60 border-gray-600/50 hover:bg-gray-700/60 hover:border-gray-500/50"
+                      className=" py-1 text-xs font-medium text-gray-400 transition-colors duration-200 rounded-full "
                     >
-                      {tech}
+                      {tech}{index < item.techStack.length - 1 && ' • '}
                     </span>
                   ))}
                 </div>
