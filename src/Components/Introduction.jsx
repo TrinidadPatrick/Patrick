@@ -25,7 +25,7 @@ const Introduction = () => {
     
 
   return (
-    <div id='home' className="overflow-hidden text-white lg:px-20 xl:px-0">
+    <div id='home' className="overflow-hidden text-white lg:px-20 xl:px-0 h-dvh flex flex-col justify-center">
 
       {/* Social Links desktop */}
       <div className="fixed z-30 flex-col hidden space-y-4 transform -translate-y-1/2 left-6 top-1/2 lg:flex">

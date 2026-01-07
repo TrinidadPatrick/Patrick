@@ -9,6 +9,7 @@ import Services from './Components/Services'
 import Projects from './Components/Projects'
 import ContactMe from './Components/ContactMe';
 import Experience from './Components/Experience';
+import GithubContributions from './Components/GithubContributions';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         </Element>
         <Element name='about'>
           <AboutMe />
+          <GithubContributions />
         </Element>
         <Element name='projects'>
           <Projects />
