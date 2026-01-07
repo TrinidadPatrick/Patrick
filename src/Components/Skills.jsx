@@ -2,86 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Code, Layers, Database, Settings, Star, Zap } from 'lucide-react';
 import { Zoom } from '@mui/material';
 
-// Custom animations CSS
-const customStyles = `
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(47, 209, 169, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 30px rgba(47, 209, 169, 0.6), 0 0 40px rgba(47, 209, 169, 0.2);
-    }
-  }
-
-  @keyframes float-skill {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-
-  @keyframes skill-entrance {
-    from {
-      opacity: 0;
-      transform: translateY(30px) scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0px) scale(1);
-    }
-  }
-
-  .skill-card:hover {
-    animation: float-skill 2s ease-in-out infinite;
-  }
-
-  .skill-entrance {
-    animation: skill-entrance 0.6s ease-out both;
-  }
-
-  .glow-effect {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
-  .underline-transition {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .underline-transition::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 50%;
-    background: linear-gradient(90deg, #2FD1A9, #10B981);
-    transition: all 0.3s ease;
-  }
-
-  .underline-transition:hover::after,
-  .underline-transition.active::after {
-    width: 100%;
-    left: 0;
-  }
-
-  .skillBox {
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .skillBox:hover {
-    transform: translateY(-8px) scale(1.05);
-    border-color: rgba(47, 209, 169, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(47, 209, 169, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-  }
-`;
-
 const Skills = () => {
   const [selectedOption, setSelectedOption] = useState('All')
   const [visible, setVisible] = useState(false);
@@ -250,7 +170,6 @@ const Skills = () => {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: customStyles }} />
       <div id='skills' className='relative flex flex-col w-full gap-10 p-10 pt-24 mt-20 overflow-hidden text-white'>
         
         
@@ -350,30 +269,6 @@ const Skills = () => {
               );
             })}
           </div>
-
-          {/* Statistics Section */}
-          {/* <div className="grid max-w-4xl grid-cols-1 gap-8 mx-auto mt-16 md:grid-cols-3">
-            <div className="p-6 text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm rounded-xl border-white/10 hover:bg-white/10">
-              <div className="mb-2 text-3xl font-bold text-green-400">
-                {skills.length}+
-              </div>
-              <div className="text-gray-300">Technologies</div>
-            </div>
-            
-            <div className="p-6 text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm rounded-xl border-white/10 hover:bg-white/10">
-              <div className="mb-2 text-3xl font-bold text-blue-400">
-                5+
-              </div>
-              <div className="text-gray-300">Years Experience</div>
-            </div>
-            
-            <div className="p-6 text-center transition-all duration-300 border bg-white/5 backdrop-blur-sm rounded-xl border-white/10 hover:bg-white/10">
-              <div className="mb-2 text-3xl font-bold text-purple-400">
-                50+
-              </div>
-              <div className="text-gray-300">Projects Completed</div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>
