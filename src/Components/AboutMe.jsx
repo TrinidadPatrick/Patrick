@@ -53,13 +53,13 @@ const AboutMe = () => {
                 Hi, I'm John Patrick Trinidad,
               </p>
             </div>
-
+            <p></p>
             <div data-aos="fade-right" className="space-y-6 leading-relaxed text-slate-300">
-              <p className="text-lg opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+              <p className="text-lg animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
                 I'm a <span className="px-2 py-1 font-semibold rounded-md text-emerald-400 bg-emerald-400/10">web developer</span> who loves solving problems with clean and efficient code. I quickly pick up new technologies and enjoy working with teams to improve projects using modern frameworks.
               </p>
               
-              <p className="text-lg opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+              <p className="text-lg animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
                 My focus is on building <span className="px-2 py-1 font-semibold rounded-md text-emerald-400 bg-emerald-400/10">user-friendly and high-performance applications</span> that meet real-world needs. I'm always looking to improve my skills through coding challenges and hands-on projects.
               </p>
             </div>
