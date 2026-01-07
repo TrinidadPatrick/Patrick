@@ -41,7 +41,7 @@ const ProjectOverview = (props) => {
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
                   <h2 className="text-2xl font-bold text-foreground mb-1">{project.title}</h2>
-                  <p className="category-tag text-base text-blue-500">{project.subtitle}</p>
+                  <p className="category-tag text-base text-themeSecondary">{project.subtitle}</p>
                 </div>
                 <span className="type-badge px-3 py-1 bg-secondary rounded-full">
                   {project.category}

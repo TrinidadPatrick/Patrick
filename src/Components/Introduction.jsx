@@ -10,6 +10,7 @@ import Blob2 from '../Utilities/Images/Blob2.svg'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Github, Linkedin, Facebook, Mail, Download, ExternalLink, Code2, Palette, Zap } from 'lucide-react';
 import developer from '../Utilities/Images/developer.svg'
+import DeveloperIllustration from './Reusable/DeveloperIllustration';
 
 const Introduction = () => {
 
@@ -53,21 +54,21 @@ const Introduction = () => {
               {/* Left Content */}
               <div className="space-y-8 animate-fade-in-left">
                 <div>
-                  <p className="mb-4 text-lg font-medium text-center text-white sm:text-start animate-bounce-subtle">
+                  <p className="mb-4 text-lg font-medium text-center text-themeSecondary sm:text-start animate-bounce-subtle">
                     John Patrick Trinidad
                   </p>
-                  <h1 className="mb-6 text-4xl font-bold leading-tight text-center text-transparent text-white sm:text-start lg:text-6xl bg-gradient-to-r bg-clip-text">
+                  <h1 className="mb-6 text-4xl font-bold leading-tight text-center text-transparent text-white sm:text-start lg:text-7xl bg-gradient-to-r bg-clip-text">
                     FULL STACK DEVELOPER
                   </h1>
-                  <p className="max-w-lg mb-8 text-xl text-center text-gray-300 sm:text-start">
+                  <p className="max-w-lg mb-8 text-lg text-center text-gray-400 sm:text-start">
                     I create web experiences with clean code and creative design, focusing on modern tools and making things easy and enjoyable for users.
                   </p>
                 </div>
 
                 <div className="flex flex-col flex-wrap items-center justify-center w-full gap-4 sm:items-start sm:flex-row sm:justify-start">
-                  <button onClick={()=>sendEmail()} className="hover:scale-105 border-2 group w-[11rem] text-gray-900 bg-white px-4 sm:px-8 py-2 sm:py-3 rounded font-semibold transition-all duration-300 flex items-center justify-center space-x-2">
+                  <button onClick={()=>sendEmail()} className="hover:scale-105 border-2 border-themeSecondary group w-[11rem] text-themeWhite bg-themeSecondary px-4 sm:px-8 py-2 sm:py-3 rounded font-semibold transition-all duration-300 flex items-center justify-center space-x-2">
                     <Mail size={20} />
-                    <span className=' whitespace-nowrap'>Contact me</span>
+                    <span className='whitespace-nowrap'>Contact me</span>
                   </button>
                   
                   <button onClick={()=> window.location.href='/Trinidad_Patrick_Resume.pdf'} className="w-[11rem] group border-2  px-4 sm:px-8 py-2 sm:py-3 rounded font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
@@ -111,7 +112,11 @@ const Introduction = () => {
 
               {/* Right Visual */}
               <div className="relative hidden lg:block animate-fade-in-right">
-                <img src={developer} alt='developer' className='xl:scale-90' />
+                {/* <img src={developer} alt='developer' className='xl:scale-90' /> */}
+                <div class="glow-effect"></div>
+                <div class="illustration">
+                <DeveloperIllustration />
+                </div>
               </div>
             </div>
           </div>

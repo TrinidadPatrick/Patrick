@@ -11,6 +11,7 @@ export default {
       colors : {
         themeDarkest : '#0f0f0f',
         themeDark: '#1a1a1a',
+        themeSecondary: '#7c58ed',
         themeWhite : '#FFFFFF',
       }
       ,

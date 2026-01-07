@@ -334,7 +334,7 @@ const Projects = () => {
                     {item.category}
                   </span>
                   </div>
-                  <p className={`text-base lg:text-sm font-medium bg-blue-500 bg-clip-text text-transparent`}>
+                  <p className={`text-base lg:text-sm font-medium text-themeSecondary`}>
                     {item.subtitle}
                   </p>
                   
