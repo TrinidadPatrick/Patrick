@@ -79,7 +79,7 @@ const AboutMe = () => {
                 ].map((item, index) => (
                   <div 
                     key={index}
-                    className={`flex items-start space-x-3 p-4 bg-slate-800/30 backdrop-blur-sm border border-gray-500 rounded-xl group`}
+                    className={`flex items-start space-x-3 p-4 bg-themeDark backdrop-blur-sm border border-gray-500 rounded-xl group`}
                     style={{ animationDelay: `${0.8 + index * 0.1}s` }}
                   >
                     <div>

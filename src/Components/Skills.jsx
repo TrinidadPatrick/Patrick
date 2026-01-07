@@ -180,7 +180,7 @@ const Skills = () => {
         <div className="relative z-10">
           {/* Section Header */}
           <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full bg-slate-800/50 backdrop-blur-sm border-white/10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full bg-themeDark backdrop-blur-sm border-white/10">
               <Zap className="w-4 h-4 text-green-400" />
               <span className="text-sm font-medium text-gray-300">Technical Expertise</span>
             </div>

@@ -9,12 +9,9 @@ export default {
   theme: {
     extend: {
       colors : {
-        themeBlue : '#0B1324',
-        themeBlueLight : '#182748',
-        themeBlueOpac : '#0C1425',
-        themeGreen : '#2FD1A9',
-        themeGreenLight : '#45d6b2',
-        themeWhite : '#FFFFFF'
+        themeDarkest : '#0f0f0f',
+        themeDark: '#1a1a1a',
+        themeWhite : '#FFFFFF',
       }
       ,
       screens : {

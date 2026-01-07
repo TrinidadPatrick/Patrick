@@ -14,7 +14,7 @@ import GithubContributions from './Components/GithubContributions';
 function App() {
 
   return (
-    <div className='App relative overflow-x-hidden flex flex-col items-center w-full max-w-[1920px] mx-auto bg-gradient-to-br bg-[#0f0f0f]'>
+    <div className='App relative overflow-x-hidden flex flex-col items-center w-full max-w-[1920px] mx-auto  bg-themeDarkest'>
       <Header />
 
       <main className='flex flex-col w-full'>

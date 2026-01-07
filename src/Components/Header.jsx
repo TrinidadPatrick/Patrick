@@ -62,7 +62,7 @@ const Header = () => {
       
       <div className='flex py-5 ps-5'>
         <h1 className='inline-block text-4xl font-bold text-white'>J</h1>
-        <h1 className='inline-block text-4xl font-bold text-themeGreen'>P</h1>
+        <h1 className='inline-block text-4xl font-bold text-[#2fd1a9]'>P</h1>
       </div>
 
         {/* Desktop Links */}
@@ -83,12 +83,12 @@ const Header = () => {
             <button onClick={()=>handleSetActive('experience')} className={`underline-transition ${activeLink === 'experience' ? 'active underline-offset-4' : ' '} text-white `}>Experience</button>
           </Link>
           <Link to="services" smooth={true} duration={500} offset={-100}>
-            <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? 'active underline-offset-4' : ' '} text-white `}>Services</button>
+            <button onClick={()=>handleSetActive('services')} className={`underline-transition ${activeLink === 'services' ? 'active underline-offset-4' : ' '} text-white `}>Services</button>
           </Link>
           {
             navbarBg && 
             <Link to="contactme" smooth={true} duration={500}>
-            <button onClick={()=>handleSetActive('contactme')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'contactme' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Contact</button>
+            <button onClick={()=>handleSetActive('contactme')} className={`underline-transition ${activeLink === 'services' ? 'active underline-offset-4' : ' '} text-white `}>Contact</button>
             </Link>
           }
         </nav>
@@ -101,14 +101,14 @@ const Header = () => {
         </nav>
         
         {/* Mobile sidebar */}
-        <aside className={`${showSideBar ? 'translate-x-[0%]' : 'translate-x-[100%]'} md:hidden transition-all ease-in w-screen extraSm:w-[300px] z-30 bg-themeBlue flex flex-col gap-20 justify-center items-center h-screen top-0 right-0 absolute`}>
+        <aside className={`${showSideBar ? 'translate-x-[0%]' : 'translate-x-[100%]'} md:hidden transition-all ease-in w-screen extraSm:w-[300px] z-30 bg-themeDark flex flex-col gap-20 justify-center items-center h-screen top-0 right-0 absolute`}>
           <div className='absolute top-0 flex justify-end w-full'>
             <button onClick={()=>setShowSideBar(false)} className='p-2 '><IoCloseOutline color='white' size={30} /></button>
           </div>
           {/* Logo */}
           <div className='flex items-center justify-center w-full'>
           <h1 className='inline-block text-5xl font-bold text-white'>J</h1>
-          <h1 className='inline-block text-5xl font-bold text-themeGreen'>P</h1>
+          <h1 className='inline-block text-5xl font-bold text-[#2fd1a9]'>P</h1>
           </div>
           {/* Links */}
           <nav className='flex flex-col items-center justify-center w-full gap-10 pe-5'>

@@ -2,9 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Box, Modal } from '@mui/material';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import ProjectOverview from './Reusable/ProjectOverview';
+import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
   const [openVideoPlayer, setOpenVideoPlayer] = useState(false)
+  const [selectedProject, setSelectedProject] = useState(null)
   const [videoDirectory, setVideoDirectory] = useState('')
   const [hoveredProject, setHoveredProject] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -205,8 +208,6 @@ const Projects = () => {
     }
   ]
 
-  const [currentSlide, setCurrentSlide] = useState(mockItems[0].id)
-
   // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -228,6 +229,10 @@ const Projects = () => {
   const viewVideo = (dir) => {
     setOpenVideoPlayer(true)
     setVideoDirectory(dir)
+  }
+
+  const handleCloseProjectOverview = () => {
+    setSelectedProject(null)
   }
 
   return (
@@ -265,7 +270,7 @@ const Projects = () => {
           >
             
             {/* Card */}
-            <div className="relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
+            <div className="relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-themeDark backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
               {/* Top Accent Line */}
               <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
@@ -288,23 +293,29 @@ const Projects = () => {
                       <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100" />
                       
                       {/* Action Buttons */}
-                      <div className="absolute inset-0 flex items-center justify-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                      <div className="absolute inset-0 flex items-center justify-center flex-col sm:flex-row gap-3 transition-all duration-300 transform translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
                         {item.video && (
                           <button 
                             onClick={() => viewVideo(item.video)}
-                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 hover:scale-105"
+                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-themeDark hover:scale-105"
                           >
-                            ▶ Demo
+                          Demo
                           </button>
                         )}
                         {item.projectLink && (
                           <button 
                             onClick={() => window.open(item.projectLink, '_blank')}
-                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 hover:scale-105"
+                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-themeDark hover:scale-105"
                           >
-                            View Project ↗
+                          View Project 
                           </button>
                         )}
+                        <button 
+                            onClick={() => setSelectedProject(item)}
+                            className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-themeDark hover:scale-105"
+                          >
+                            Project Overview 
+                          </button>
                       </div>
                     </div>
                   ))}
@@ -381,6 +392,41 @@ const Projects = () => {
           </video>
         </div>
       </Modal>
+
+      {/* Project Overview Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {/* Backdrop */}
+            <motion.div
+              className="absolute inset-0 bg-black/50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+            />
+
+            {/* Modal */}
+            <motion.div
+              className="p-3 md:p-0 "
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+            >
+              <ProjectOverview
+                handleCloseProjectOverview={handleCloseProjectOverview}
+                project={selectedProject}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

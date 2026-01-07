@@ -57,7 +57,7 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 border rounded-full border-white/10 bg-white/5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 border rounded-full border-white/10 bg-themeDark">
             <Briefcase className="w-4 h-4 text-emerald-400" />
             <span className="text-sm white">Professional Journey</span>
           </div>
