@@ -133,90 +133,84 @@ const Skills = () => {
       category : 'BE',
       level: 60
       },
-      // {
-      //   icon : (<span className="icon-[devicon--csharp]"  style={{width: "4em", height: "4em"}}></span>),
-      //   title : 'C#',
-      //   category : 'BE',
-      //   level: 60
-      // },
-      // {
-      //   icon : (<span className="icon-[skill-icons--php-dark]"  style={{width: "4em", height: "4em"}}></span>),
-      //   title : 'PHP',
-      //   category : 'BE',
-      //   level: 60
-      //   },
       {
       icon : (<span className="icon-[logos--typescript-icon]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'TypeScript',
       category : 'FE',
       level: 75
-    },
-    {
-    icon : (<span className="icon-[devicon--html5]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'HTML',
-    category : 'FE',
-    level: 95
-    },
-    {
-    icon : (<span className="icon-[vscode-icons--file-type-css]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'CSS',
-    category : 'FE',
-    level: 90
-    },
-    {
-    icon : (<span className="icon-[devicon--tailwindcss]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'Tailwind CSS',
-    category : 'FE',
-    level: 93
-    },
-    {
-    icon : (<span className="icon-[skill-icons--bootstrap]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'Bootstrap',
-    category : 'FE',
-    level: 70
-    },
-    {
-    icon : (<span className="icon-[logos--nodejs-icon]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'Node JS',
-    category : 'BE',
-    level: 88
-    },
-    {
-    icon : (<span className="icon-[skill-icons--expressjs-light]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'EXPRESS JS',
-    category : 'BE',
-    level: 85
-    },
-    {
-    icon : (<span className="icon-[skill-icons--mongodb]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'MongoDB',
-    category : 'DB',
-    level: 85
-    },
-    {
-    icon : (<span className="icon-[skill-icons--mysql-light]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'MySQL',
-    category : 'DB',
-    level: 88
-    },
-    {
-    icon : (<span className="icon-[vscode-icons--file-type-plsql]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'PL/SQL',
-    category : 'DB',
-    level: 75
-    },
-    {
-    icon : (<span className="icon-[skill-icons--git]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'GIT',
-    category : 'OTHERS',
-    level: 90
-    },
-    {
-    icon : (<span className="icon-[bi--github]"  style={{width: "4em", height: "4em"}}></span>),
-    title : 'GitHub',
-    category : 'OTHERS',
-    level: 70
-    },
+      },
+      {
+      icon : (<span className="icon-[devicon--html5]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'HTML',
+      category : 'FE',
+      level: 95
+      },
+      {
+      icon : (<span className="icon-[vscode-icons--file-type-css]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'CSS',
+      category : 'FE',
+      level: 90
+      },
+      {
+      icon : (<span className="icon-[devicon--tailwindcss]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'Tailwind CSS',
+      category : 'FE',
+      level: 93
+      },
+      {
+      icon : (<span className="icon-[skill-icons--bootstrap]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'Bootstrap',
+      category : 'FE',
+      level: 70
+      },
+      {
+      icon : (<span className="icon-[logos--nodejs-icon]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'Node JS',
+      category : 'BE',
+      level: 88
+      },
+      {
+      icon : (<span className="icon-[skill-icons--expressjs-light]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'EXPRESS JS',
+      category : 'BE',
+      level: 85
+      },
+      {
+      icon : (<span className="icon-[skill-icons--prisma]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'PRISMA',
+      category : 'BE',
+      level: 65
+      },
+      {
+      icon : (<span className="icon-[skill-icons--mongodb]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'MongoDB',
+      category : 'DB',
+      level: 85
+      },
+      {
+      icon : (<span className="icon-[skill-icons--mysql-light]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'MySQL',
+      category : 'DB',
+      level: 88
+      },
+      {
+      icon : (<span className="icon-[vscode-icons--file-type-plsql]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'PL/SQL',
+      category : 'DB',
+      level: 75
+      },
+      {
+      icon : (<span className="icon-[skill-icons--git]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'GIT',
+      category : 'OTHERS',
+      level: 90
+      },
+      {
+      icon : (<span className="icon-[bi--github]"  style={{width: "4em", height: "4em"}}></span>),
+      title : 'GitHub',
+      category : 'OTHERS',
+      level: 70
+      },
   ]
 
   const handleFilter = (option) => {
@@ -267,17 +261,17 @@ const Skills = () => {
         <div className="relative z-10">
           {/* Section Header */}
           <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full bg-white/5 backdrop-blur-sm border-white/10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 border rounded-full bg-slate-800/50 backdrop-blur-sm border-white/10">
               <Zap className="w-4 h-4 text-green-400" />
               <span className="text-sm font-medium text-gray-300">Technical Expertise</span>
             </div>
             
             <h1 className='mb-6 text-4xl font-bold text-center xl:text-6xl'>
-              <span className="text-transparent bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text">
+              <span className="text-transparent text-white">
                 My Skills
               </span>
             </h1>
-            <div className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div>
+            <div className="w-24 h-1 mx-auto bg-white rounded-full"></div>
           </div>
 
           {/* Navigation */}
@@ -292,15 +286,12 @@ const Skills = () => {
                   onClick={() => handleFilter(category.key)}
                   className={`group flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 transform hover:scale-105 ${
                     isActive
-                      ? 'bg-gradient-to-r from-green-500 to-emerald-400 border-green-400 text-white shadow-lg glow-effect'
+                      ? 'bg-gray-200 text-black'
                       : 'bg-white/5 border-white/20 text-gray-300 hover:bg-white/10 hover:border-white/30'
                   }`}
                 >
-                  <IconComponent className={`w-4 h-4 ${isActive ? 'text-white' : 'text-gray-400'}`} />
-                  <span className="text-xs font-medium md:text-base whitespace-nowrap">{category.name}</span>
-                  {isActive && (
-                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  )}
+                  <IconComponent className={`w-4 h-4 ${isActive ? 'text-black' : 'text-gray-400'}`} />
+                  <span className="mt-1 text-xs font-medium md:text-base whitespace-nowrap">{category.name}</span>
                 </button>
               );
             })}

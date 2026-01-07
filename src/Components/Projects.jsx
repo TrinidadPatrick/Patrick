@@ -243,15 +243,12 @@ const Projects = () => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
         <div className="relative inline-block">
-          <h1 className="text-4xl font-bold text-transparent md:text-6xl bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text">
+          <h1 className="text-4xl font-bold text-transparent text-white md:text-6xl">
             My Projects
           </h1>
           <div className="h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full transform scale-x-0 animate-[scaleX_1s_ease-out_0.5s_forwards]" />
         </div>
-        <div className="w-24 h-1 mx-auto mt-5 rounded-full bg-gradient-to-r from-green-400 to-cyan-400"></div>
-        {/* <p className="max-w-2xl mx-auto mt-4 text-lg text-gray-400">
-          Crafting digital experiences with passion, precision, and cutting-edge technology
-        </p> */}
+        <div className="w-24 h-1 mx-auto mt-5 bg-white rounded-full"></div>
       </div>
 
       {/* Project List */}  
@@ -268,12 +265,12 @@ const Projects = () => {
           >
             
             {/* Card */}
-            <div className=" relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
+            <div className="relative h-full overflow-hidden transition-all duration-500 border shadow-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl border-gray-700/50 rounded-3xl hover:shadow-3xl">
               {/* Top Accent Line */}
               <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
               {/* Image Container */}
-              <div className="relative w-full overflow-hidden p-2 ">
+              <div className="relative w-full p-2 overflow-hidden ">
                 <Carousel 
                   showIndicators={false} 
                   showThumbs={false} 
@@ -285,7 +282,7 @@ const Projects = () => {
                   className="h-full"
                 >
                   {item.img.map((imgsrc, index) => (
-                    <div key={index} className="relative flex  group/image rounded-2xl overflow-hidden ">
+                    <div key={index} className="relative flex overflow-hidden group/image rounded-2xl ">
                       <div style={{backgroundImage: `url(${imgsrc})`}} className='w-full bg-black bg-center bg-cover aspect-video' />
                       {/* Overlay */}
                       <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100" />
@@ -339,11 +336,11 @@ const Projects = () => {
                 </>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 border-t border-gray-700 pt-5">
+                <div className="flex flex-wrap gap-2 pt-5 border-t border-gray-700">
                   {item.techStack.map((tech, index) => (
                     <span 
                       key={index}
-                      className=" py-1 text-xs font-medium text-gray-400 transition-colors duration-200 rounded-full "
+                      className="py-1 text-xs font-medium text-gray-400 transition-colors duration-200 rounded-full "
                     >
                       {tech}{index < item.techStack.length - 1 && ' • '}
                     </span>

@@ -53,23 +53,23 @@ const Experience = () => {
   ];
 
   return (
-    <div id="experience" className="  text-white px-6 py-16">
+    <div id="experience" className="px-6 py-16 text-white ">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-emerald-500/30 rounded-full mb-4">
+        <div className="mb-16 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 border rounded-full border-white/10 bg-white/5">
             <Briefcase className="w-4 h-4 text-emerald-400" />
-            <span className="text-sm text-emerald-400">Professional Journey</span>
+            <span className="text-sm white">Professional Journey</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Work <span className="text-emerald-400">Experience</span>
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            Work <span className="white">Experience</span>
           </h2>
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/50 via-emerald-400/30 to-transparent transform lg:-translate-x-1/2"></div>
+          <div className="absolute top-0 bottom-0 left-0 w-px transform bg-white/20 lg:left-1/2"></div>
 
           {experiences.map((exp, idx) => (
             <div
@@ -78,37 +78,41 @@ const Experience = () => {
                 idx % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12 lg:ml-auto lg:text-left'
               } lg:w-1/2`}
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-0 lg:left-auto lg:right-auto top-0 transform lg:-translate-x-1/2 w-4 h-4 bg-emerald-400 rounded-full border-4 border-slate-900 shadow-lg shadow-emerald-400/50"></div>
 
               {/* Content Card */}
-              <div className="ml-8 lg:ml-0 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+              <div className="p-6 ml-8 transition-all duration-300 border lg:ml-0 bg-slate-800/40 backdrop-blur-sm border-gray-100/20 rounded-xl hover:border-white hover:shadow-lg hover:shadow-gray-500/10">
                 {/* Period Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-4">
-                  <Calendar className="w-3 h-3 text-emerald-400" />
-                  <span className="text-xs text-emerald-400">{exp.period}</span>
+                <div className={`flex flex-col ${idx % 2 === 0 ? 'items-end' : 'items-start'} py-3 border-b border-slate-700`}>
+                  <div className="flex items-center gap-2 mb-4 text-slate-400">
+                    <Calendar className="w-4 h-4" />
+                    <span className="text-sm font-medium">{exp.period}</span>
+                  </div>
+                  
+                  <h1 className="mb-2 text-4xl font-bold text-white">
+                  {exp.title}
+                  </h1>
+                  <p className="text-xl text-slate-300">{exp.company}</p>
                 </div>
 
-                {/* Title and Company */}
-                <h3 className="text-xl lg:text-2xl font-bold mb-1 text-white">
-                  {exp.title}
-                </h3>
-                <p className="text-emerald-400 font-medium mb-6">{exp.company}</p>
-
                 {/* Achievements */}
-                <div className="space-y-3">
+                <div className="flex flex-col mt-3 space-y-3">
                   {exp.achievements.map((achievement, i) => (
-                    <div key={i} className="flex items-start gap-3 text-slate-300 text-sm lg:text-base">
-                      <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <div key={i} className="flex items-start gap-3 text-sm text-gray-200 lg:text-base">
+                      {
+                        idx % 2 !== 0 && (<div className="w-1.5 h-1.5 bg-white rounded-full mt-2 flex-shrink-0"></div>)
+                      }
                       <p className="leading-relaxed">
                         {achievement.text}{' '}
                         {achievement.highlight && (
-                          <span className="text-emerald-400 font-semibold">
+                          <span className="font-bold text-gray-100">
                             {achievement.highlight}
                           </span>
                         )}
                         {achievement.suffix && ` ${achievement.suffix}`}
                       </p>
+                      {
+                        idx % 2 === 0 && (<div className="w-1.5 h-1.5 bg-white rounded-full mt-2 flex-shrink-0"></div>)
+                      }
                     </div>
                   ))}
                 </div>
@@ -119,7 +123,7 @@ const Experience = () => {
 
         {/* Bottom Decoration */}
         <div className="flex justify-center mt-12">
-          <div className="w-16 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent rounded-full"></div>
+          <div className="w-16 h-1 rounded-full bg-gradient-to-r from-transparent via-white to-transparent"></div>
         </div>
       </div>
     </div>

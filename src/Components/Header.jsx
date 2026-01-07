@@ -47,7 +47,7 @@ const Header = () => {
       return () => {
           window.removeEventListener('scroll', handleScroll);
       };
-  }, []); // Empty dependency array means this effect runs only once
+  }, []);
 
 
   return (
@@ -55,35 +55,35 @@ const Header = () => {
       {/* Backdrop */}
       {
         showSideBar &&
-        <div onClick={()=>setShowSideBar(false)} style={{backgroundColor : 'rgba(0,0,0,0.6)'}} className='w-full cursor-pointer h-screen backdrop-blur-sm top-0 absolute bg-white z-20'>
+        <div onClick={()=>setShowSideBar(false)} style={{backgroundColor : 'rgba(0,0,0,0.6)'}} className='absolute top-0 z-20 w-full h-screen bg-white cursor-pointer backdrop-blur-sm'>
 
       </div>
       }
       
-      <div className='flex ps-5 py-5'>
-        <h1 className='text-white text-4xl inline-block font-bold'>J</h1>
-        <h1 className='text-themeGreen text-4xl inline-block font-bold'>P</h1>
+      <div className='flex py-5 ps-5'>
+        <h1 className='inline-block text-4xl font-bold text-white'>J</h1>
+        <h1 className='inline-block text-4xl font-bold text-themeGreen'>P</h1>
       </div>
 
         {/* Desktop Links */}
-        <nav className='hidden md:flex w-full h-full justify-end gap-10 pe-5'>
+        <nav className='justify-end hidden w-full h-full gap-10 md:flex pe-5'>
           <Link to="home" smooth={true} duration={500}>
-                <button onClick={()=>handleSetActive('home')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'home' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Home</button>
+                <button onClick={()=>handleSetActive('home')} className={`underline-transition ${activeLink === 'home' ? 'active underline-offset-4' : ' '} text-white `}>Home</button>
           </Link>
           <Link to="about" smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('about')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'about' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>About me</button>
+            <button onClick={()=>handleSetActive('about')} className={`underline-transition ${activeLink === 'about' ? 'active underline-offset-4' : ' '} text-white `}>About me</button>
           </Link>
           <Link to="projects" smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('projects')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'projects' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Projects</button>
+            <button onClick={()=>handleSetActive('projects')} className={`underline-transition ${activeLink === 'projects' ? 'active underline-offset-4' : ' '} text-white `}>Projects</button>
           </Link>
           <Link to="skills"  smooth={true} duration={500} offset={-100}>
-          <button onClick={()=>handleSetActive('skills')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'skills' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Skills</button>
+            <button onClick={()=>handleSetActive('skills')} className={`underline-transition ${activeLink === 'skills' ? 'active underline-offset-4' : ' '} text-white `}>Skills</button>
           </Link>
           <Link to="experience" smooth={true} duration={500}>
-          <button onClick={()=>handleSetActive('experience')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'experience' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Experience</button>
+            <button onClick={()=>handleSetActive('experience')} className={`underline-transition ${activeLink === 'experience' ? 'active underline-offset-4' : ' '} text-white `}>Experience</button>
           </Link>
           <Link to="services" smooth={true} duration={500} offset={-100}>
-          <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Services</button>
+            <button onClick={()=>handleSetActive('services')} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'services' ? 'active underline-offset-4' : ' '} text-white `}>Services</button>
           </Link>
           {
             navbarBg && 
@@ -94,7 +94,7 @@ const Header = () => {
         </nav>
 
         {/* Hamburger Button */}
-        <nav className='w-full pe-5 mb-3 h-full flex md:hidden items-center justify-end'>
+        <nav className='flex items-center justify-end w-full h-full mb-3 pe-5 md:hidden'>
           <button onClick={()=>setShowSideBar(true)}>
             <RxHamburgerMenu color='white' size={25} />
           </button>
@@ -102,16 +102,16 @@ const Header = () => {
         
         {/* Mobile sidebar */}
         <aside className={`${showSideBar ? 'translate-x-[0%]' : 'translate-x-[100%]'} md:hidden transition-all ease-in w-screen extraSm:w-[300px] z-30 bg-themeBlue flex flex-col gap-20 justify-center items-center h-screen top-0 right-0 absolute`}>
-          <div className='w-full absolute top-0 flex justify-end'>
+          <div className='absolute top-0 flex justify-end w-full'>
             <button onClick={()=>setShowSideBar(false)} className='p-2 '><IoCloseOutline color='white' size={30} /></button>
           </div>
           {/* Logo */}
-          <div className='flex w-full items-center justify-center'>
-          <h1 className='text-white text-5xl inline-block font-bold'>J</h1>
-          <h1 className='text-themeGreen text-5xl inline-block font-bold'>P</h1>
+          <div className='flex items-center justify-center w-full'>
+          <h1 className='inline-block text-5xl font-bold text-white'>J</h1>
+          <h1 className='inline-block text-5xl font-bold text-themeGreen'>P</h1>
           </div>
           {/* Links */}
-          <nav className='flex flex-col w-full  justify-center items-center gap-10 pe-5'>
+          <nav className='flex flex-col items-center justify-center w-full gap-10 pe-5'>
           <Link to="home" smooth={true} duration={500}>
                 <button onClick={()=>{handleSetActive('home');setShowSideBar(false)}} style={{textDecorationColor : '#2FD1A9'}} className={`underline-transition ${activeLink === 'home' ? ' text-themeGreen active underline-offset-4' : 'text-white hover:text-themeGreen'} `}>Home</button>
           </Link>

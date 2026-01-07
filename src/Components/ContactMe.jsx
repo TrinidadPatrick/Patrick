@@ -17,32 +17,32 @@ const ContactMe = () => {
   }
 
   return (
-    <div id='contactme' className='w-full h-full flex flex-col  pt-20'>
-        <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl bg-gradient-to-r from-emerald-50 via-emerald-100 to-teal-200 bg-clip-text text-transparent xl:text-4xl text-center  font-bold'>Contact me</h1>
-        <div className="w-24 mt-5 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
+    <div id='contactme' className='flex flex-col w-full h-full pt-20'>
+        <h1 style={{textDecorationColor : '#2FD1A9'}} className='text-2xl font-bold text-center text-white xl:text-4xl'>Contact me</h1>
+        <div className="w-24 h-1 mx-auto mt-5 bg-white rounded-full"></div>
 
-        <div className='w-full h-full flex gap-5 mt-10'>
-            <div className='flex-1 hidden sm:flex justify-center items-center'>
+        <div className='flex w-full h-full gap-5 mt-10'>
+            <div className='items-center justify-center flex-1 hidden sm:flex'>
                 <img className='w-[60%] xl:w-[40%] aspect-square' src={contactMeImg} alt="contact me" />
             </div>
-            <div className='flex-1 flex flex-col px-10 sm:px-0 justify-center gap-10 '>
+            <div className='flex flex-col justify-center flex-1 gap-10 px-10 sm:px-0 '>
                 {/* Home */}
                 <div className='flex items-center gap-3'>
                     <FaHome color='white' size={20} />
-                    <p className='text-white font-light'>Tanauan City, Batangas, Philippines</p>
+                    <p className='font-light text-white'>Tanauan City, Batangas, Philippines</p>
                 </div>
                 {/* Email */}
                 <div className='flex items-center gap-3'>
                     <FaEnvelope color='white' size={20} />
-                    <p className='text-white font-light'>TrinidadPatrick019@gmail.com</p>
+                    <p className='font-light text-white'>TrinidadPatrick019@gmail.com</p>
                 </div>
                 {/* Phone */}
                 <div className='flex items-center gap-3'>
                     <FaPhone color='white' size={20} />
-                    <p className='text-white font-light'>0967 314 3709</p>
+                    <p className='font-light text-white'>0967 314 3709</p>
                 </div>
                 {/* Message Button */}
-                <div className='text-white flex px-3 py-2 bg-themeGreenLight w-fit items-center rounded-full gap-2'>
+                <div className='flex items-center gap-2 px-3 py-2 text-white border rounded-full w-fit'>
                 <button onClick={()=>sendEmail()}><p className='pt-0.5'>Let's Talk</p></button>
                 <IoIosArrowRoundForward size={20} />
                 </div>
@@ -50,10 +50,10 @@ const ContactMe = () => {
         </div>
 
         {/* Footer */}
-        <footer className=" text-white py-6 mt-10">
+        <footer className="py-6 mt-10 text-white ">
       <div className="container mx-auto text-center">
         <p>© All rights reserved. Patrick - {year}</p>
-        <div className="flex justify-center space-x-4 mt-4">
+        <div className="flex justify-center mt-4 space-x-4">
           <a href="https://github.com/TrinidadPatrick" target="_blank" rel="noopener noreferrer" className="text-white">
             <BsGithub />
           </a>
