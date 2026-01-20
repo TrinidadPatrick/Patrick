@@ -13,18 +13,10 @@ const Projects = () => {
   const [videoDirectory, setVideoDirectory] = useState('')
   const [hoveredProject, setHoveredProject] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState(mockItems)
   const sectionRef = useRef(null)
 
   const IMAGE_BASE_URL = import.meta.env.VITE_CLOUDFRONT_IMAGE_URL
-
-  const s3Client = new S3Client({
-  region: "ap-southeast-2",
-    credentials: {
-      accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY,
-      secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY,
-    },
-  });
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -43,39 +35,6 @@ const Projects = () => {
 
     return () => observer.disconnect()
   }, [])
-
-  console.log(IMAGE_BASE_URL)
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      const command = new ListObjectsV2Command({
-        Bucket: "public-images-2025",
-        Prefix: "portfolio-images/project-images/",
-      });
-
-      try {
-        const response = await s3Client.send(command);
-        const urls = response.Contents
-          .filter(item => item.Size > 0)
-          .map(item => `${IMAGE_BASE_URL}/${item.Key}`);
-
-        const newProjects = mockItems.map((project) => {
-          const s3Folder = project.s3FolderName
-          if(s3Folder){
-            const s3Images = urls.filter((url) => url.includes(s3Folder))
-            if(!s3Images) return {...project, images: []}
-              return {...project, images: s3Images}
-          }
-          return {...project, images: []}
-        })
-        setProjects(newProjects)
-      } catch (err) {
-        console.error("Error fetching images from S3", err);
-      }
-    };
-
-    fetchImages();
-  }, []);
 
   const viewVideo = (dir) => {
     setOpenVideoPlayer(true)
@@ -180,7 +139,7 @@ const Projects = () => {
                   swipeable={false}
                   className="h-full"
                 >
-                {item.images.length > 0 ? item.images.map((imgsrc, index) => 
+                {item?.images?.length > 0 ? item?.images?.map((imgsrc, index) => 
                   {
                   return (
                     <RenderProjectImages key={index} item={item} imgsrc={imgsrc} />

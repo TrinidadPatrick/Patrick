@@ -8,7 +8,7 @@
       subtitle: 'Anime Discovery Platform',
       description: "A modern anime browsing platform integrated with Jikan API, featuring advanced search, filtering, and discovery capabilities.",
       techStack: ['React.js', 'Tailwind', 'Jikan API'],
-      img: Array.from({length : 7}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/ani-hive/image-${index + 1}.png`),
+      img: Array.from({length : 4}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/ani-hive/image-${index + 1}-v2.png`),
       projectLink: 'https://ani-hive-ilrc.vercel.app/',
       category: 'Frontend',
       color: 'from-pink-500 to-rose-400'
