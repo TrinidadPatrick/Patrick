@@ -113,8 +113,8 @@ const Introduction = () => {
               {/* Right Visual */}
               <div className="relative hidden lg:block animate-fade-in-right">
                 {/* <img src={developer} alt='developer' className='xl:scale-90' /> */}
-                <div class="glow-effect"></div>
-                <div class="illustration">
+                <div className="glow-effect"></div>
+                <div className="illustration">
                 <DeveloperIllustration />
                 </div>
               </div>

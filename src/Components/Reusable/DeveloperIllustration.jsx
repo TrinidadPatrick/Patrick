@@ -2,9 +2,9 @@ import React from 'react'
 
 const DeveloperIllustration = () => {
   return (
-    <div class="illustration-container">
-        <div class="glow-effect"></div>
-            <svg class="developer-img" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <div className="illustration-container">
+        <div className="glow-effect"></div>
+            <svg className="developer-img" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
                         
                         <rect x="100" y="400" width="600" height="20" fill="#2a2a3e" rx="5"/>
                         
@@ -60,7 +60,7 @@ const DeveloperIllustration = () => {
             
                         <rect x="620" y="370" width="40" height="50" fill="#3a3a4e" rx="5"/>
                         <ellipse cx="640" cy="370" rx="20" ry="8" fill="#4a4a5e"/>
-                        <path d="M 660 385 Q 680 385 680 400 Q 680 410 665 410" fill="none" stroke="#3a3a4e" stroke-width="5"/>
+                        <path d="M 660 385 Q 680 385 680 400 Q 680 410 665 410" fill="none" stroke="#3a3a4e" strokeWidth="5"/>
                
                         <circle cx="150" cy="380" r="15" fill="#5a9fd4" opacity="0.3"/>
                         <circle cx="680" cy="320" r="20" fill="#7c58ed" opacity="0.2"/>
