@@ -62,7 +62,7 @@ const Header = () => {
       
       <div className='flex py-5 ps-5'>
         <h1 className='inline-block text-4xl font-bold text-white'>J</h1>
-        <h1 className='inline-block text-4xl font-bold text-[#2fd1a9]'>P</h1>
+        <h1 className='inline-block text-4xl font-bold text-themeSecondary'>P</h1>
       </div>
 
         {/* Desktop Links */}
@@ -108,7 +108,7 @@ const Header = () => {
           {/* Logo */}
           <div className='flex items-center justify-center w-full'>
           <h1 className='inline-block text-5xl font-bold text-white'>J</h1>
-          <h1 className='inline-block text-5xl font-bold text-[#2fd1a9]'>P</h1>
+          <h1 className='inline-block text-5xl font-bold text-themeSecondary'>P</h1>
           </div>
           {/* Links */}
           <nav className='flex flex-col items-center justify-center w-full gap-10 pe-5'>
