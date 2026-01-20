@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link, Element } from 'react-scroll';
-import './App.css'
 import Introduction from './Components/Introduction'
 import Header from './Components/Header'
 import AboutMe from './Components/AboutMe'

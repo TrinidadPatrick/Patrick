@@ -275,7 +275,7 @@ const Projects = () => {
               <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
               {/* Image Container */}
-              <div className="relative w-full p-2 overflow-hidden ">
+              <div className="relative w-full p-2 overflow-hidden aspect-[16/9]  ">
                 <Carousel 
                   showIndicators={false} 
                   showThumbs={false} 
