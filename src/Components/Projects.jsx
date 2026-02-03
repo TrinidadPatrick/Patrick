@@ -4,8 +4,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import ProjectOverview from './Reusable/ProjectOverview';
 import { motion, AnimatePresence } from "framer-motion";
-import { S3Client, ListObjectsV2Command } from "@aws-sdk/client-s3";
 import { mockItems } from '../Utilities/mock-items';
+import { listAllFiles } from '../service/SupabaseService';
+import { supabase } from '../supabase';
 
 const Projects = () => {
   const [openVideoPlayer, setOpenVideoPlayer] = useState(false)
@@ -15,8 +16,7 @@ const Projects = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [projects, setProjects] = useState(mockItems)
   const sectionRef = useRef(null)
-
-  const IMAGE_BASE_URL = import.meta.env.VITE_CLOUDFRONT_IMAGE_URL
+  const [images, setImages] = useState([]);
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -35,6 +35,33 @@ const Projects = () => {
 
     return () => observer.disconnect()
   }, [])
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const files = await listAllFiles("portfolio_images");
+
+      const urls = files.map((file) => {
+        const { data } = supabase.storage
+          .from("portfolio_images")
+          .getPublicUrl(file.path);
+        return {
+          project: file.name, url: data.publicUrl
+        }
+      });
+      
+      const newProjects = projects.map((project) => {
+        const images = urls.filter((url) => url.project == project.bucketname).map((img) => img.url)
+        return ({
+          ...project, images: images.length > 0 ? images : (project.images || [])
+        })
+      })
+
+      setProjects(newProjects)
+
+    };
+
+    fetchImages();
+  },[])
 
   const viewVideo = (dir) => {
     setOpenVideoPlayer(true)
@@ -129,30 +156,29 @@ const Projects = () => {
               
               {/* Image Container */}
               <div className="relative w-full p-2 overflow-hidden aspect-[16/9]  ">
-                <Carousel 
-                  showIndicators={false} 
-                  showThumbs={false} 
-                  showStatus={false} 
-                  autoPlay={false} 
-                  infiniteLoop 
-                  interval={5000}
-                  swipeable={false}
-                  className="h-full"
-                >
-                {item?.images?.length > 0 ? item?.images?.map((imgsrc, index) => 
+                {
+                  item?.images && (
+                    <Carousel 
+                      showIndicators={false} 
+                      showThumbs={false} 
+                      showStatus={false} 
+                      autoPlay={false} 
+                      infiniteLoop 
+                      interval={5000}
+                      swipeable={false}
+                      className="h-full"
+                    >
+                {
+                  item?.images?.map((imgsrc, index) => 
                   {
                   return (
-                    <RenderProjectImages key={index} item={item} imgsrc={imgsrc} />
-                  )})
-                  :
-                  item.img.map((imgsrc, index) => 
-                  {
-                  return (
-                    <RenderProjectImages key={index} item={item} imgsrc={imgsrc} />
+                    <RenderProjectImages key={imgsrc} item={item} imgsrc={imgsrc} />
                   )})
                 
                 }
                 </Carousel>
+                  )
+                }
               </div>
 
               {/* Content */}
@@ -162,19 +188,19 @@ const Projects = () => {
                 <>
                 <div>
                   <div className='flex items-center justify-between'>
-                  <h3 className="mb-1 text-2xl font-bold text-white lg:text-xl">{item.title}</h3>
+                  <h3 className="mb-1 text-lg font-bold text-white lg:text-xl">{item.title}</h3>
                   <span className={` text-xs font-semiboldtext-white`}>
                     {item.category}
                   </span>
                   </div>
-                  <p className={`text-base lg:text-sm font-medium text-themeSecondary`}>
+                  <p className={`text-sm font-medium text-themeSecondary`}>
                     {item.subtitle}
                   </p>
                   
                 </div>
 
                 {/* Description */}
-                <p className="text-lg leading-relaxed text-gray-300 md:text-sm lg:text-base line-clamp-3">
+                <p className="text-sm leading-relaxed text-gray-300 xl:text-base line-clamp-3">
                   {item.description}
                 </p>
                 </>
@@ -237,16 +263,16 @@ const Projects = () => {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black/50"
+              className="absolute w-full h-full bg-black"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.9 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
             />
 
             {/* Modal */}
             <motion.div
-              className="p-3 md:p-0 "
+              className="p-3 md:p-0 z-20 "
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}

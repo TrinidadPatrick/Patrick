@@ -21,115 +21,101 @@ const Skills = () => {
       icon : (<span className="icon-[devicon--react]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'ReactJS',
       category : 'FE',
-      level: 92
       },
       {
       icon : (<span className="icon-[tabler--brand-react-native]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'React Native',
       category : 'FE',
-      level: 80
     },
     {
       icon : (<span className="icon-[devicon--nextjs]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'NextJS',
       category : 'FE',
-      level: 70
     },
     {
       icon : (<span className="icon-[skill-icons--wordpress]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'WordPress',
       category : 'FE',
-      level: 55
     },
     {
       icon : (<span className="icon-[logos--javascript]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'JavaScript',
       category : 'FE',
-      level: 88
       },
       {
       icon : (<span className="icon-[logos--python]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'Python',
       category : 'BE',
-      level: 60
       },
       {
       icon : (<span className="icon-[logos--typescript-icon]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'TypeScript',
       category : 'FE',
-      level: 75
       },
       {
       icon : (<span className="icon-[devicon--html5]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'HTML',
       category : 'FE',
-      level: 95
       },
       {
       icon : (<span className="icon-[vscode-icons--file-type-css]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'CSS',
       category : 'FE',
-      level: 90
       },
       {
       icon : (<span className="icon-[devicon--tailwindcss]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'Tailwind CSS',
       category : 'FE',
-      level: 93
       },
       {
       icon : (<span className="icon-[skill-icons--bootstrap]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'Bootstrap',
       category : 'FE',
-      level: 70
       },
       {
       icon : (<span className="icon-[logos--nodejs-icon]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'Node JS',
       category : 'BE',
-      level: 88
       },
       {
       icon : (<span className="icon-[skill-icons--expressjs-light]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'EXPRESS JS',
       category : 'BE',
-      level: 85
       },
       {
       icon : (<span className="icon-[skill-icons--prisma]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'PRISMA',
       category : 'BE',
-      level: 65
       },
       {
       icon : (<span className="icon-[skill-icons--mongodb]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'MongoDB',
       category : 'DB',
-      level: 85
       },
       {
       icon : (<span className="icon-[skill-icons--mysql-light]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'MySQL',
       category : 'DB',
-      level: 88
+      },
+      {
+      icon : (<span class="icon-[devicon--supabase]" style={{width: "4em", height: "4em"}}></span>),
+      title : 'Supabase',
+      category : 'DB',
       },
       {
       icon : (<span className="icon-[vscode-icons--file-type-plsql]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'PL/SQL',
       category : 'DB',
-      level: 75
       },
       {
       icon : (<span className="icon-[skill-icons--git]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'GIT',
       category : 'OTHERS',
-      level: 90
       },
       {
       icon : (<span className="icon-[bi--github]"  style={{width: "4em", height: "4em"}}></span>),
       title : 'GitHub',
       category : 'OTHERS',
-      level: 70
       },
   ]
 
@@ -237,26 +223,6 @@ const Skills = () => {
                     <p className="font-semibold text-center text-white transition-all duration-300 whitespace-nowrap group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-200 group-hover:bg-clip-text">
                       {skill.title}
                     </p>
-                    
-                    {/* Skill Level Progress Bar */}
-                    <div className="absolute bottom-0 left-2 right-2">
-                      <div className="w-full h-1 overflow-hidden transition-opacity duration-300 bg-gray-700 rounded-full opacity-0 group-hover:opacity-100">
-                        <div 
-                          className="h-full transition-all duration-1000 ease-out rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
-                          style={{ 
-                            width: isHovered ? `${skill.level}%` : '0%',
-                            transitionDelay: isHovered ? `${index * 0.05}s` : '0s'
-                          }}
-                        ></div>
-                      </div>
-                      
-                      {/* Percentage Display */}
-                      <div className={`text-xs font-medium text-center mt-1 transition-all duration-300 ${
-                        isHovered ? 'opacity-100 text-green-400' : 'opacity-0'
-                      }`}>
-                        {skill.level}%
-                      </div>
-                    </div>
                     
                     {/* Category Badge */}
                     <div className="absolute transition-opacity duration-300 opacity-0 top-2 right-2 group-hover:opacity-100">

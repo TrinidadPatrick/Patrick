@@ -20,6 +20,7 @@
     "@lottiefiles/dotlottie-react": "^0.17.12",
     "@material-tailwind/react": "^2.1.9",
     "@mui/material": "^5.15.20",
+    "@supabase/supabase-js": "^2.93.3",
     "aos": "^2.3.4",
     "axios": "^1.7.2",
     "cloudinary-core": "^2.13.1",
