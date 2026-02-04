@@ -4,8 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import ProjectOverview from './Reusable/ProjectOverview';
 import { motion, AnimatePresence } from "framer-motion";
-import { mockItems } from '../Utilities/mock-items';
 import { listAllFiles } from '../service/SupabaseService';
+import axios from 'axios';
 
 const Projects = () => {
   const [openVideoPlayer, setOpenVideoPlayer] = useState(false)
@@ -13,7 +13,7 @@ const Projects = () => {
   const [videoDirectory, setVideoDirectory] = useState('')
   const [hoveredProject, setHoveredProject] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [projects, setProjects] = useState(mockItems)
+  const [projects, setProjects] = useState(null)
   const sectionRef = useRef(null)
 
   // Intersection Observer for animations
@@ -34,7 +34,20 @@ const Projects = () => {
     return () => observer.disconnect()
   }, [])
 
+  const fetchProjects = async () => {
+    try {
+      const {data} = await axios.get('https://zzmrjhftlghyxczgaqri.supabase.co/storage/v1/object/public/project_lists/projects.json')
+      if(data){
+        setProjects(data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
+    if(!projects) return
+
     const fetchImages = async () => {
       const baseUrl = 'https://zzmrjhftlghyxczgaqri.supabase.co/storage/v1/object/public/portfolio_images/'
       const files = await listAllFiles("portfolio_images");
@@ -54,8 +67,11 @@ const Projects = () => {
       setProjects(newProjects)
 
     };
-
     fetchImages();
+  },[projects])
+
+  useEffect(() => {
+    fetchProjects()
   },[])
 
   const viewVideo = (dir) => {
@@ -140,7 +156,7 @@ const Projects = () => {
       {/* Project List */}  
       <div className='semiSm:w-[75%] sm:w-[70%] md:w-[90%] mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10'>
         {
-          projects.length > 0 && projects.map((item, index) => {
+          projects && projects.map((item, index) => {
               return (
                 <div key={index}
             className={`relative group transition-all h-full  duration-700 ease-out transform 

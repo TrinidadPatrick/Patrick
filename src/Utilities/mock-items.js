@@ -45,16 +45,14 @@
       color: 'from-blue-500 to-rose-400'
     },
     {
-      id: 'item-1',
-      title: 'Kanoah',
-      bucketname: 'kanoah',
-      subtitle: 'Web-Based Service Finder',
-      description: "A comprehensive web application for searching and booking services based on the user's location, featuring real-time chat integration and intelligent service matching algorithms.",
-      techStack: ['React', 'Tailwind', 'Node.js', 'Express.js', 'MongoDB'],
-      video: `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447721/KanoahVideoDemo_fibs2p.mp4`,
-      projectLink: 'https://kanoah-web.vercel.app/',
+      id: 'item-35',
+      title: 'Ocean Trip',
+      bucketname: 'mar',
+      subtitle: 'Booking Platform',
+      description: "The System to Book Wildlife Trips is a digital platform designed to make planning and reserving wildlife adventures easier and more accessible. It allows users to browse through various destinations, view available tour packages, check pricing, and book trips directly through the system.",
+      techStack: ['WordPress', 'Elementor'],
       category: 'Full Stack',
-      color: 'from-blue-500 to-cyan-400'
+      color: 'from-blue-500 to-pink-400'
     },
     {
       id: 'item-2',
@@ -67,26 +65,26 @@
       color: 'from-blue-500 to-gray-400'
     },
     {
-      id: 'item-35',
-      title: 'Ocean Trip',
-      bucketname: 'mar',
-      subtitle: 'Booking Platform',
-      description: "The System to Book Wildlife Trips is a digital platform designed to make planning and reserving wildlife adventures easier and more accessible. It allows users to browse through various destinations, view available tour packages, check pricing, and book trips directly through the system.",
-      techStack: ['WordPress', 'Elementor'],
+      id: 'item-1',
+      title: 'Kanoah',
+      bucketname: 'kanoah',
+      subtitle: 'Web-Based Service Finder',
+      description: "A comprehensive web application for searching and booking services based on the user's location, featuring real-time chat integration and intelligent service matching algorithms.",
+      techStack: ['React', 'Tailwind', 'Node.js', 'Express.js', 'MongoDB'],
+      video: `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447721/KanoahVideoDemo_fibs2p.mp4`,
+      projectLink: 'https://kanoah-web.vercel.app/',
       category: 'Full Stack',
-      color: 'from-blue-500 to-pink-400'
+      color: 'from-blue-500 to-cyan-400'
     },
     {
-      id: 'item-4',
-      title: 'Chat Wave',
-      bucketname: 'chatwave',
-      subtitle: 'Real-time Communication Platform',
-      description: "A sophisticated chat system with real-time messaging, friendship features, and seamless user experience built for modern communication needs.",
-      techStack: ['React', 'Tailwind', 'Node.js', 'MongoDB', 'Socket.io'],
-      video: ``,
-      projectLink: 'https://convo-wave.vercel.app/',
-      category: 'Full Stack',
-      color: 'from-purple-500 to-pink-400'
+      id: 'item-6',
+      title: 'Kanoah Mobile',
+      bucketname: 'kanoahmobile',
+      subtitle: 'Mobile Service Platform',
+      description: "A mobile-first application for searching and booking services with location-based features and integrated chat functionality for seamless user experience.",
+      techStack: ['React Native', 'Tailwind', 'Node.js', 'Express.js', 'MongoDB'],
+      category: 'Mobile',
+      color: 'from-orange-500 to-red-400'
     },
     {
       id: 'item-5',
@@ -100,14 +98,28 @@
       color: 'from-green-500 to-emerald-400'
     },
     {
-      id: 'item-6',
-      title: 'Kanoah Mobile',
-      bucketname: 'kanoahmobile',
-      subtitle: 'Mobile Service Platform',
-      description: "A mobile-first application for searching and booking services with location-based features and integrated chat functionality for seamless user experience.",
-      techStack: ['React Native', 'Tailwind', 'Node.js', 'Express.js', 'MongoDB'],
-      category: 'Mobile',
-      color: 'from-orange-500 to-red-400'
+      id: 'item-67',
+      title: 'TIC TAC TOE',
+      bucketname: 'tictactoe',
+      subtitle: 'Simple tic tac toe game',
+      description: "A Tic-Tac-Toe game where players can choose the grid size, play in turns, track scores, and reset the game anytime. Built to be interactive, responsive, and easy to use.",
+      techStack: ['NextJS', 'Tailwind'],
+      video: `https://res.cloudinary.com/dnbgrdgpn/video/upload/v1719447816/SwiftPOSVideoDemo_xukej0.mp4`,
+      projectLink: 'https://tic-tac-toe-iota-mocha-27.vercel.app/',
+      category: 'Frontend',
+      color: 'from-green-500 to-emerald-400'
+    },
+    {
+      id: 'item-4',
+      title: 'Chat Wave',
+      bucketname: 'chatwave',
+      subtitle: 'Real-time Communication Platform',
+      description: "A sophisticated chat system with real-time messaging, friendship features, and seamless user experience built for modern communication needs.",
+      techStack: ['React', 'Tailwind', 'Node.js', 'MongoDB', 'Socket.io'],
+      video: ``,
+      projectLink: 'https://convo-wave.vercel.app/',
+      category: 'Full Stack',
+      color: 'from-purple-500 to-pink-400'
     },
     {
       id: 'item-7',
