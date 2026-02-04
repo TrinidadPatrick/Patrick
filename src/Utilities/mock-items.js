@@ -6,7 +6,8 @@
       title: 'AniHive',
       bucketname: 'anihive',
       subtitle: 'Anime Discovery Platform',
-      description: "A modern anime browsing platform integrated with Jikan API, featuring advanced search, filtering, and discovery capabilities.",
+      description: "A modern anime browsing platform integrated with Jikan, MAL, and Anilist API, " + 
+      "featuring advanced search, filtering, Tracking with MAL integration, and discovery capabilities.",
       techStack: ['React.js', 'Tailwind',, 'NodeJS', 'Jikan API', 'Mal API', 'Anilist API'],
       projectLink: 'https://ani-hive-ilrc.vercel.app/',
       category: 'Frontend',
@@ -25,11 +26,10 @@
     {
       id: 'item-3',
       title: 'Music Go',
-      bucketname: 'music-go',
+      bucketname: 'musicgo',
       subtitle: 'Music Platform',
       description: "A web application for exploring and vibing with musics, with different features such as playlist, library and more.",
-      techStack: ['React', 'Tailwind', 'Python', 'Shadcn', 'MySQL'],
-      images: Array.from({length : 7}, (_, index) => `${IMAGE_BASE_URL}/portfolio-images/project-images/music-go/image-${index + 1}.png`),
+      techStack: ['React', 'Tailwind', 'Python', 'Shadcn'],
       projectLink: 'https://music-go.vercel.app/',
       category: 'Full Stack',
       color: 'from-blue-500 to-pink-400'

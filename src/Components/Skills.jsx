@@ -98,7 +98,7 @@ const Skills = () => {
       category : 'DB',
       },
       {
-      icon : (<span class="icon-[devicon--supabase]" style={{width: "4em", height: "4em"}}></span>),
+      icon : (<span className="icon-[devicon--supabase]" style={{width: "4em", height: "4em"}}></span>),
       title : 'Supabase',
       category : 'DB',
       },

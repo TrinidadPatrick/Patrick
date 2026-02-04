@@ -9,12 +9,6 @@ const ProjectOverview = (props) => {
         <main className='bg-themeDark rounded-xl max-w-3xl xl:max-w-3xl max-h-[80vh] overflow-hidden'>
             {/* Image */}
             <div className="relative overflow-hidden bg-red-100 flex aspect-video group">
-                <button
-                    onClick={()=>handleCloseProjectOverview()}
-                    className="bg-white text-black absolute top-4 right-4 z-20 p-2 rounded-full bg-background/80 text-foreground hover:bg-secondary transition-colors"
-                    >
-                    <X className="w-5 h-5" />
-                </button>
                 <Carousel 
                     showArrows={true}
                     showIndicators={false} 
@@ -43,7 +37,12 @@ const ProjectOverview = (props) => {
                 >
                     {project.images.map((imgsrc, index) => (
                         <div key={index} className="w-full h-full relative flex overflow-hidden group/image ">
-                            <div style={{backgroundImage: `url(${imgsrc})`}} className='w-full bg-black bg-center bg-cover aspect-video' />
+                            <div className='w-full bg-black bg-center bg-cover aspect-[1920/1080]'>
+                            <img 
+                                src={imgsrc}
+                                className="w-full h-full object-fit" 
+                            />
+                            </div>
                             {/* Overlay */}
                             <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100" />
                         </div>

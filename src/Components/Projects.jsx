@@ -6,7 +6,6 @@ import ProjectOverview from './Reusable/ProjectOverview';
 import { motion, AnimatePresence } from "framer-motion";
 import { mockItems } from '../Utilities/mock-items';
 import { listAllFiles } from '../service/SupabaseService';
-import { supabase } from '../supabase';
 
 const Projects = () => {
   const [openVideoPlayer, setOpenVideoPlayer] = useState(false)
@@ -16,7 +15,6 @@ const Projects = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [projects, setProjects] = useState(mockItems)
   const sectionRef = useRef(null)
-  const [images, setImages] = useState([]);
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -38,17 +36,14 @@ const Projects = () => {
 
   useEffect(() => {
     const fetchImages = async () => {
+      const baseUrl = 'https://zzmrjhftlghyxczgaqri.supabase.co/storage/v1/object/public/portfolio_images/'
       const files = await listAllFiles("portfolio_images");
 
       const urls = files.map((file) => {
-        const { data } = supabase.storage
-          .from("portfolio_images")
-          .getPublicUrl(file.path);
         return {
-          project: file.name, url: data.publicUrl
+          project: file.name.split('/')[0], url: baseUrl + file.name
         }
       });
-      
       const newProjects = projects.map((project) => {
         const images = urls.filter((url) => url.project == project.bucketname).map((img) => img.url)
         return ({
@@ -72,23 +67,29 @@ const Projects = () => {
     setSelectedProject(null)
   }
 
+
   const RenderProjectImages = React.memo(({ item, imgsrc }) => {
     return (
-      <div className="relative flex overflow-hidden group/image rounded-2xl">
+      <div className="relative flex-1 flex overflow-hidden group/image rounded-2xl aspect-[1920/1080] border-2 border-gray-800">
         {/* Image Background */}
         <div
-          style={{ backgroundImage: `url(${imgsrc})` }}
-          className="w-full bg-black bg-center bg-cover aspect-video"
-        />
+          className="w-full bg-center bg-inherit bg-no-repeat h-full"
+        >
+          <img 
+              src={imgsrc}
+              className="w-full h-full object-fit" 
+          />
+        </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100" />
 
         {/* Action Buttons */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0 sm:flex-row group-hover:opacity-100 group-hover:translate-y-0">
+        <div className={`absolute bg-black/70 w-full h-full ${hoveredProject === item.id ? 'flex' : 'hidden'} flex-col items-center justify-center gap-3 transition-all duration-300 
+        transform`}>
           {item.video && (
             <button
-              onClick={() => viewVideo(item.video)}
+              onClick={(e) => {e.preventDefault();viewVideo(item.video)}}
               className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-themeDark hover:scale-105"
             >
               Demo
@@ -97,7 +98,7 @@ const Projects = () => {
 
           {item.projectLink && (
             <button
-              onClick={() => window.open(item.projectLink, "_blank")}
+              onClick={(e) => {e.preventDefault();window.open(item.projectLink, "_blank")}}
               className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-themeDark hover:scale-105"
             >
               View Project
@@ -105,7 +106,7 @@ const Projects = () => {
           )}
 
           <button
-            onClick={() => setSelectedProject(item)}
+            onClick={(e) => {e.preventDefault();setSelectedProject(item)}}
             className="px-4 py-2 text-sm font-semibold text-white transition-all duration-200 transform rounded-lg shadow-lg bg-themeDark hover:scale-105"
           >
             Project Overview
@@ -143,10 +144,10 @@ const Projects = () => {
               return (
                 <div key={index}
             className={`relative group transition-all h-full  duration-700 ease-out transform 
-            
             `}
             onMouseEnter={() => setHoveredProject(item.id)}
             onMouseLeave={() => setHoveredProject(null)}
+            onClick={() => setHoveredProject(hoveredProject === item.id ? null : item.id)}
           >
             
             {/* Card */}
@@ -155,7 +156,7 @@ const Projects = () => {
               <div className={`${hoveredProject === item.id ? 'h-1 w-full' : 'h-0 w-0'} bg-gradient-to-r ${item.color} transform transition-all duration-500 `} />
               
               {/* Image Container */}
-              <div className="relative w-full p-2 overflow-hidden aspect-[16/9]  ">
+              <div className="relative w-full p-2 overflow-hidden  ">
                 {
                   item?.images && (
                     <Carousel 
@@ -166,7 +167,7 @@ const Projects = () => {
                       infiniteLoop 
                       interval={5000}
                       swipeable={false}
-                      className="h-full"
+                      className="w-full h-full flex"
                     >
                 {
                   item?.images?.map((imgsrc, index) => 
@@ -263,7 +264,7 @@ const Projects = () => {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute w-full h-full bg-black"
+              className="absolute w-full h-full bg-black cursor-pointer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.9 }}
               exit={{ opacity: 0 }}
