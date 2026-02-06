@@ -1,107 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
-    font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
-  }
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+}
 
-  body {
-    background-color: #0f0f0f
-  }
+body {
+  background-color: #0f0f0f
+}
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
 
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px rgba(47, 209, 169, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 30px rgba(47, 209, 169, 0.6), 0 0 40px rgba(47, 209, 169, 0.2);
-    }
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4B5563;
+  border-radius: 9999px;
+}
+
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(47, 209, 169, 0.3);
   }
 
-  @keyframes float-skill {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
+  50% {
+    box-shadow: 0 0 30px rgba(47, 209, 169, 0.6), 0 0 40px rgba(47, 209, 169, 0.2);
+  }
+}
+
+@keyframes float-skill {
+
+  0%,
+  100% {
+    transform: translateY(0px);
   }
 
-  @keyframes skill-entrance {
-    from {
-      opacity: 0;
-      transform: translateY(30px) scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0px) scale(1);
-    }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes skill-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
   }
 
-  .skill-card:hover {
-    animation: float-skill 2s ease-in-out infinite;
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
   }
+}
 
-  .skill-entrance {
-    animation: skill-entrance 0.6s ease-out both;
-  }
+.skill-card:hover {
+  animation: float-skill 2s ease-in-out infinite;
+}
 
-  .glow-effect {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
+.skill-entrance {
+  animation: skill-entrance 0.6s ease-out both;
+}
 
-  .underline-transition {
-    position: relative;
-    transition: all 0.3s ease;
-  }
+.glow-effect {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
 
-  .underline-transition::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 50%;
-    background: white;
-    transition: all 0.3s ease;
-  }
+.underline-transition {
+  position: relative;
+  transition: all 0.3s ease;
+}
 
-  .underline-transition:hover::after,
-  .underline-transition.active::after {
-    width: 100%;
-    left: 0;
-  }
+.underline-transition::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: white;
+  transition: all 0.3s ease;
+}
 
-  .skillBox {
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.05);
-  }
+.underline-transition:hover::after,
+.underline-transition.active::after {
+  width: 100%;
+  left: 0;
+}
 
-  .skillBox:hover {
-    transform: translateY(-8px) scale(1.05);
-    border-color: rgba(47, 209, 169, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(47, 209, 169, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-  }
+.skillBox {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+}
 
-  .glow-effect {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(124, 88, 237, 0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulse 4s ease-in-out infinite;
-            filter: blur(60px);
-        }
+.skillBox:hover {
+  transform: translateY(-8px) scale(1.05);
+  border-color: rgba(47, 209, 169, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(47, 209, 169, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
 
+.glow-effect {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 88, 237, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 4s ease-in-out infinite;
+  filter: blur(60px);
+}
