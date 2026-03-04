@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { listAllFiles } from "../service/SupabaseService";
 import axios from "axios";
 import { supabase } from "../supabase.js";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Projects = () => {
   const [openVideoPlayer, setOpenVideoPlayer] = useState(false);
@@ -173,13 +174,17 @@ const Projects = () => {
 
                   {/* Image Container */}
                   <div
-                    onMouseEnter={() => setHoveredProject(item.id)}
+                    onMouseEnter={(e) => {
+                      if (e.target.closest("button")) return;
+                      setHoveredProject(item.id);
+                    }}
                     onMouseLeave={() => setHoveredProject(null)}
-                    onClick={() =>
+                    onClick={(e) => {
+                      if (e.target.closest("button")) return;
                       setHoveredProject(
                         hoveredProject === item.id ? null : item.id,
-                      )
-                    }
+                      );
+                    }}
                     className="relative w-full p-2 overflow-hidden  "
                   >
                     {item?.images && (
@@ -192,6 +197,56 @@ const Projects = () => {
                         interval={5000}
                         swipeable={false}
                         className="w-full h-full flex"
+                        renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                          hasPrev && (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                onClickHandler();
+                              }}
+                              onMouseEnter={(e) => {
+                                e.stopPropagation();
+                                setHoveredProject(null);
+                              }}
+                              onMouseLeave={(e) => {
+                                e.stopPropagation();
+                                setHoveredProject(item.id);
+                              }}
+                              onMouseDown={(e) => e.stopPropagation()}
+                              title={label}
+                              className="absolute left-2 z-20 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 backdrop-blur-md border border-white/10 text-white hover:bg-black/50 transition-all duration-300 group/arrow"
+                            >
+                              <ChevronLeft className="w-5 h-5 group-hover/arrow:scale-110 transition-transform" />
+                            </button>
+                          )
+                        }
+                        renderArrowNext={(onClickHandler, hasNext, label) =>
+                          hasNext && (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                onClickHandler();
+                              }}
+                              onMouseEnter={(e) => {
+                                e.stopPropagation();
+                                setHoveredProject(null);
+                              }}
+                              onMouseLeave={(e) => {
+                                e.stopPropagation();
+                                setHoveredProject(item.id);
+                              }}
+                              onMouseDown={(e) => e.stopPropagation()}
+                              title={label}
+                              className="absolute right-2 z-20 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 backdrop-blur-md border border-white/10 text-white hover:bg-black/50 transition-all duration-300 group/arrow"
+                            >
+                              <ChevronRight className="w-5 h-5 group-hover/arrow:scale-110 transition-transform" />
+                            </button>
+                          )
+                        }
                       >
                         {item?.images?.map((imgsrc, index) => {
                           return (
